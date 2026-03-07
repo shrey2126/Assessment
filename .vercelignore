@@ -1,0 +1,18 @@
+# Vercel ignore file
+# Files and directories to exclude from deployment
+
+node_modules
+.git
+.vscode
+.idea
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+
