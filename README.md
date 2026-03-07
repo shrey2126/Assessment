@@ -144,6 +144,7 @@ dist/
 
 **Made with ❤️ using React + Vite + Tailwind CSS**
 
-**Live Demo:** [your-portfolio.vercel.app](https://your-portfolio.vercel.app)
+**Live Demo:**
+https://assessment-beta-gules.vercel.app/
 
 
