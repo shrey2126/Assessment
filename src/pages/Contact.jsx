@@ -58,7 +58,7 @@ const Contact = () => {
       {/* Hero - scroll-linked fan-out image stack */}
       <section ref={heroSectionRef} className="pt-20 md:pt-24 pb-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
-          <Reveal>
+          <Reveal direction="left" durationMs={950}>
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-libre-caslon text-primary-white mb-6 leading-tight">
               Your <span className="italic text-shimmer">vision</span> deserves to be
               <br />
@@ -70,7 +70,7 @@ const Contact = () => {
           </Reveal>
 
           {/* Image stack - fans out as user scrolls */}
-          <Reveal delayMs={100}>
+          <Reveal direction="up" delayMs={120} durationMs={1000}>
             <div className="relative mt-12 md:mt-16 flex justify-center items-center min-h-[280px] md:min-h-[320px]">
               {heroImages.map((img, idx) => (
                 <div
@@ -97,10 +97,9 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* Let's Create Something Timeless */}
       <section className="py-12 md:py-16 px-4 sm:px-6 lg:px-8 section-dark">
         <div className="max-w-4xl mx-auto text-center">
-          <Reveal>
+          <Reveal direction="up" durationMs={950}>
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-libre-caslon text-primary-white mb-6">
               Let's <span className="italic text-shimmer">Create</span> Something <span className="italic hover:text-primary-olive transition-colors duration-300 cursor-pointer">Timeless</span>.
             </h2>
@@ -113,7 +112,7 @@ const Contact = () => {
         <div className="max-w-2xl mx-auto">
           <div className="section-dark rounded-2xl border border-white/10 p-6 md:p-8 hover:border-primary-olive/30 transition-all duration-500 hover:shadow-xl hover:shadow-primary-olive/10">
             <form onSubmit={handleSubmit} className="space-y-6">
-              <Reveal>
+              <Reveal direction="left">
                 <div>
                   <label htmlFor="name" className="block text-sm font-inter text-primary-muted mb-2">
                     Full name
@@ -131,7 +130,7 @@ const Contact = () => {
                 </div>
               </Reveal>
 
-              <Reveal delayMs={50}>
+              <Reveal direction="right" delayMs={60}>
                 <div>
                   <label htmlFor="email" className="block text-sm font-inter text-primary-muted mb-2">
                     Email address
@@ -149,7 +148,7 @@ const Contact = () => {
                 </div>
               </Reveal>
 
-              <Reveal delayMs={100}>
+              <Reveal direction="left" delayMs={120}>
                 <div>
                   <label htmlFor="subject" className="block text-sm font-inter text-primary-muted mb-2">
                     Subject
@@ -166,7 +165,7 @@ const Contact = () => {
                 </div>
               </Reveal>
 
-              <Reveal delayMs={150}>
+              <Reveal direction="right" delayMs={180}>
                 <div>
                   <label htmlFor="message" className="block text-sm font-inter text-primary-muted mb-2">
                     Message
@@ -184,7 +183,7 @@ const Contact = () => {
                 </div>
               </Reveal>
 
-              <Reveal delayMs={200}>
+              <Reveal direction="up" delayMs={240}>
                 <Button type="submit" variant="primary" className="w-full sm:w-auto uppercase tracking-wider hover:scale-105">
                   Send Message
                 </Button>
@@ -200,20 +199,20 @@ const Contact = () => {
           <span className="inline-flex items-center gap-6 mx-6">
             <span className="text-primary-white/90 font-libre-caslon text-xl md:text-2xl italic hover:text-shimmer transition-all duration-300">Where your ideas</span>
             {bottomImages.slice(0, 4).map((img, idx) => (
-              <img 
-                key={idx} 
-                src={img} 
-                alt="" 
-                className="w-10 h-10 md:w-12 md:h-12 rounded-lg object-cover flex-shrink-0 hover:scale-125 hover:rotate-12 transition-all duration-300 cursor-pointer" 
+              <img
+                key={idx}
+                src={img}
+                alt=""
+                className="w-10 h-10 md:w-12 md:h-12 rounded-lg object-cover flex-shrink-0 hover:scale-125 hover:rotate-12 transition-all duration-300 cursor-pointer"
               />
             ))}
             <span className="text-primary-white/90 font-libre-caslon text-xl md:text-2xl italic hover:text-shimmer transition-all duration-300">meet in</span>
             {bottomImages.map((img, idx) => (
-              <img 
-                key={`b-${idx}`} 
-                src={img} 
-                alt="" 
-                className="w-10 h-10 md:w-12 md:h-12 rounded-lg object-cover flex-shrink-0 hover:scale-125 hover:rotate-12 transition-all duration-300 cursor-pointer" 
+              <img
+                key={`b-${idx}`}
+                src={img}
+                alt=""
+                className="w-10 h-10 md:w-12 md:h-12 rounded-lg object-cover flex-shrink-0 hover:scale-125 hover:rotate-12 transition-all duration-300 cursor-pointer"
               />
             ))}
             <span className="text-primary-white/90 font-libre-caslon text-xl md:text-2xl italic hover:text-shimmer transition-all duration-300">storytelling</span>

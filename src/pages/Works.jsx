@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Button from '../components/Button';
+import Icon from '../components/Icon';
 import FAQAccordion from '../components/FAQAccordion';
 import ImageGrid from '../components/ImageGrid';
 import CTASection from '../components/CTASection';
@@ -27,6 +28,15 @@ const Works = () => {
     'https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=300&h=300&fit=crop',
   ];
 
+  const ctaImages = [
+    'https://images.unsplash.com/photo-1559847844-5315695dadae?w=300&h=300&fit=crop',
+    'https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=300&h=300&fit=crop',
+    'https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=300&h=300&fit=crop',
+    'https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=300&h=300&fit=crop',
+    'https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=300&h=300&fit=crop',
+    'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=300&h=300&fit=crop',
+  ];
+
 
 
   return (
@@ -34,7 +44,7 @@ const Works = () => {
       {/* Selected Works */}
       <section className="pt-20 md:pt-24 pb-16 md:pb-24 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
-          <Reveal>
+          <Reveal direction="up" durationMs={900}>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-libre-caslon text-primary-white text-center mb-6">
               Selected <span className="italic">Works</span>
             </h1>
@@ -45,7 +55,7 @@ const Works = () => {
 
           <div className="mt-12 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
             {projects.map((project, idx) => (
-              <Reveal key={project.id} delayMs={idx * 60}>
+              <Reveal key={project.id} direction={idx % 2 === 0 ? 'left' : 'right'} delayMs={idx * 55} durationMs={850}>
                 <div
                   onClick={() => setSelectedMedia(project)}
                   className="group block relative aspect-square rounded-xl overflow-hidden img-hover-luxury cursor-pointer"
@@ -64,7 +74,6 @@ const Works = () => {
                       <p className="text-white font-inter text-sm">{project.title}</p>
                     </div>
                   </div>
-                  {/* Media type indicator */}
                   {project.type !== 'image' && (
                     <div className="absolute top-4 right-4 bg-primary-olive text-primary-black px-3 py-1 rounded-full text-xs font-inter font-semibold uppercase">
                       {project.type}
@@ -86,18 +95,37 @@ const Works = () => {
       )}
 
       {/* FAQs */}
-      <FAQAccordion
-        title="FAQs"
-        subtitle="Curious about our process or pricing? Here are some helpful answers to your FAQs, designed to simplify the answers."
-        faqImage="https://images.unsplash.com/photo-1520975916090-3105956dac38?w=600&h=800&fit=crop"
-        items={faqItems}
-        layout="split"
-      />
+      <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 section-dark">
+        <div className="max-w-6xl mx-auto">
+          <Reveal direction="left" durationMs={900}>
+            <h2 className="text-4xl md:text-5xl font-libre-caslon italic text-primary-white mb-3">
+              FAQs
+            </h2>
+            <p className="text-base font-inter text-primary-muted mb-10 leading-relaxed max-w-xl">
+              Curious about our process or pricing? Here are some helpful answers to your FAQs, designed to simplify the answers.
+            </p>
+          </Reveal>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
+            <Reveal direction="left" distance={65} durationMs={1000}>
+              <div className="rounded-2xl overflow-hidden" style={{ height: '420px' }}>
+                <img
+                  src="https://images.unsplash.com/photo-1520975916090-3105956dac38?w=800&h=900&fit=crop"
+                  alt="FAQ"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </Reveal>
+            <Reveal direction="right" distance={65} delayMs={100} durationMs={1000}>
+              <FAQAccordion items={faqItems} itemsOnly />
+            </Reveal>
+          </div>
+        </div>
+      </section>
 
       {/* Visual Notes */}
       <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 section-base">
         <div className="max-w-6xl mx-auto">
-          <Reveal>
+          <Reveal direction="right" durationMs={900}>
             <h2 className="text-4xl md:text-5xl font-libre-caslon italic text-primary-white mb-4">
               Visual <span className="not-italic">Notes</span>
             </h2>
@@ -105,8 +133,10 @@ const Works = () => {
               Ongoing works, experiments, and moments shared in real-time on Instagram.
             </p>
           </Reveal>
-          <ImageGrid images={visualNotesImages} columns={3} />
-          <Reveal delayMs={100}>
+          <Reveal direction="up" delayMs={80} durationMs={950}>
+            <ImageGrid images={visualNotesImages} columns={3} />
+          </Reveal>
+          <Reveal direction="up" delayMs={180}>
             <div className="text-center mt-8">
               <a
                 href="https://instagram.com"
@@ -114,8 +144,11 @@ const Works = () => {
                 rel="noopener noreferrer"
                 className="inline-block"
               >
-                <Button variant="primary" className="uppercase tracking-wider">
-                  View on Instagram
+                <Button variant="primary" className="tracking-wider">
+                  <span className="flex items-center gap-2">
+                    <Icon name="instagram" className="w-5 h-5" />
+                    Follow on Instagram
+                  </span>
                 </Button>
               </a>
             </div>
@@ -123,12 +156,15 @@ const Works = () => {
         </div>
       </section>
 
-      {/* CTA */}
+      {/* ── CTA ── */}
       <CTASection
         title="Ready to bring your vision to life?"
-        subtitle="Let's craft visuals that tell your story. Get in touch to discuss your project, learn more about our services, and begin our creative journey together."
-        buttonText="Let's Talk"
+        subtitle="High-end visual content for brands, businesses, and agencies — from stills to motion."
+        buttonText="Get In Touch"
         buttonLink="/contact"
+        variant="withImages"
+        cornerImages={ctaImages}
+        sectionBg="section-base"
       />
       <section className="py-12 md:py-16 px-0 overflow-hidden section-dark">
         <Marquee speed={40} className="py-4">

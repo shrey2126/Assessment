@@ -147,16 +147,16 @@ const Home = () => {
           </div>
         </section>
 
-        {/* Featured Works - split slide: image from left, text from right */}
+        {/* Featured Works — heading from left, image from left, text from right */}
         <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 section-dark/95">
           <div className="max-w-6xl mx-auto">
-            <Reveal>
+            <Reveal direction="left" durationMs={900}>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-inter text-primary-white mb-12">
-                Featured <span className=" font-libre-caslon italic">Works</span> For Our Incredible <span className=" font-libre-caslon italic">Clients</span>
+                Featured <span className="font-libre-caslon italic">Works</span> For Our Incredible <span className="font-libre-caslon italic">Clients</span>
               </h2>
             </Reveal>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-              <Reveal delayMs={50} direction="left" durationMs={900}>
+              <Reveal direction="left" distance={70} durationMs={1000}>
                 <div className="relative group rounded-2xl overflow-hidden shadow-2xl">
                   <img
                     src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1200&h=800&fit=crop"
@@ -166,7 +166,7 @@ const Home = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 </div>
               </Reveal>
-              <Reveal delayMs={120} direction="right" durationMs={900}>
+              <Reveal direction="right" distance={70} delayMs={100} durationMs={1000}>
                 <div className="space-y-6">
                   <h3 className="text-4xl md:text-5xl font-libre-caslon text-primary-white">F&B</h3>
                   <p className="text-lg font-inter text-primary-muted leading-relaxed">
@@ -183,11 +183,11 @@ const Home = () => {
           </div>
         </section>
 
-        {/* About Me */}
+        {/* About Me — text from left, image from right */}
         <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 section-base">
           <div className="max-w-6xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <Reveal>
+              <Reveal direction="left" distance={60} durationMs={950}>
                 <div>
                   <h2 className="text-4xl md:text-5xl lg:text-6xl font-libre-caslon text-primary-white mb-6">
                     About <span className="italic">Me</span>
@@ -202,7 +202,7 @@ const Home = () => {
                   </Link>
                 </div>
               </Reveal>
-              <Reveal delayMs={100}>
+              <Reveal direction="right" distance={60} delayMs={120} durationMs={950}>
                 <div className="relative rounded-2xl overflow-hidden shadow-xl">
                   <img
                     src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=1000&fit=crop"
@@ -216,10 +216,10 @@ const Home = () => {
           </div>
         </section>
 
-        {/* Process */}
+        {/* Process — heading from right, steps stagger up */}
         <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 section-dark">
           <div className="max-w-4xl mx-auto">
-            <Reveal>
+            <Reveal direction="right" durationMs={900}>
               <h2 className="text-4xl md:text-5xl font-libre-caslon italic text-primary-white mb-4">
                 Process
               </h2>
@@ -231,38 +231,38 @@ const Home = () => {
           </div>
         </section>
 
-        {/* FAQs */}
+        {/* FAQs — heading from left, image from left, accordion from right */}
         <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 section-base">
           <div className="max-w-6xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-              <Reveal>
-                <div className="order-2 lg:order-1 rounded-2xl overflow-hidden h-full min-h-[400px] img-hover-luxury">
+            <Reveal direction="left" durationMs={900}>
+              <h2 className="text-4xl md:text-5xl font-libre-caslon italic text-primary-white mb-3">
+                FAQs
+              </h2>
+              <p className="text-base font-inter text-primary-muted mb-10 leading-relaxed max-w-xl">
+                Curious about collaborating? Here are some helpful answers to your FAQs,<br className="hidden sm:block" /> designed to simplify the process!
+              </p>
+            </Reveal>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
+              <Reveal direction="left" distance={65} durationMs={1000}>
+                <div className="rounded-2xl overflow-hidden" style={{ height: '420px' }}>
                   <img
-                    src="https://images.unsplash.com/photo-1551024506-0bccd828d307?w=600&h=800&fit=crop"
+                    src="https://images.unsplash.com/photo-1551024506-0bccd828d307?w=800&h=900&fit=crop"
                     alt="FAQ"
                     className="w-full h-full object-cover"
                   />
                 </div>
               </Reveal>
-              <div className="order-1 lg:order-2">
-                <Reveal>
-                  <h2 className="text-4xl md:text-5xl font-libre-caslon italic text-primary-white mb-4">
-                    FAQs
-                  </h2>
-                  <p className="text-lg font-inter text-primary-muted mb-8 leading-relaxed">
-                    Curious about collaboration? Here are some helpful answers to your FAQs, designed to simplify the process.
-                  </p>
-                </Reveal>
+              <Reveal direction="right" distance={65} delayMs={100} durationMs={1000}>
                 <FAQAccordion items={faqItems} itemsOnly />
-              </div>
+              </Reveal>
             </div>
           </div>
         </section>
 
-        {/* Visual Notes */}
+        {/* Visual Notes — heading from up, grid items stagger */}
         <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 section-dark">
           <div className="max-w-6xl mx-auto">
-            <Reveal>
+            <Reveal direction="up" durationMs={900}>
               <h2 className="text-4xl md:text-5xl font-libre-caslon italic text-primary-white mb-4">
                 Visual / <span className="not-italic">Notes</span>
               </h2>
@@ -270,8 +270,10 @@ const Home = () => {
                 Ongoing stories, experiments, and moments shared in real time on Instagram.
               </p>
             </Reveal>
-            <ImageGrid images={visualNotesImages} columns={3} />
-            <Reveal delayMs={100}>
+            <Reveal direction="up" delayMs={80} durationMs={950}>
+              <ImageGrid images={visualNotesImages} columns={3} />
+            </Reveal>
+            <Reveal direction="up" delayMs={180} durationMs={900}>
               <div className="text-center mt-8">
                 <a
                   href="https://instagram.com"
@@ -317,17 +319,15 @@ const Home = () => {
           </Marquee>
         </section>
 
-        {/* CTA - Storytelling + Ready to bring your vision */}
+        {/* ── CTA ── */}
         <CTASection
-          sectionBg="section-base"
-          preTitle="Storytelling."
-          preSubtitle="Where your journey begins."
           title="Ready to bring your vision to life?"
-          subtitle="Let's create something truly unforgettable."
-          buttonText="Contact Me"
+          subtitle="High-end visual content for brands, businesses, and agencies — from stills to motion."
+          buttonText="Get In Touch"
           buttonLink="/contact"
           variant="withImages"
           cornerImages={ctaImages}
+          sectionBg="section-base"
         />
       </div>
     </div>

@@ -8,7 +8,7 @@ const Layout = () => {
     <div className="flex flex-col min-h-screen relative">
       <AnimatedBackground />
       <Navbar />
-      <main className="flex-grow pt-16 md:pt-20 relative z-10">
+      <main className="flex-grow pt-16 md:pt-20">
         <Outlet />
       </main>
       <Footer />

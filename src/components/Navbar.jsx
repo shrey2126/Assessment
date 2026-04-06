@@ -13,7 +13,7 @@ const Navbar = () => {
       setIsOpen(false);
       setWorksOpen(false);
     }, 0);
-    
+
     return () => {
       clearTimeout(timer);
       if (worksCloseTimer.current) window.clearTimeout(worksCloseTimer.current);
@@ -24,7 +24,7 @@ const Navbar = () => {
   const isWorksActive = () => location.pathname.startsWith('/works');
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 animate-fade-in-up-blur">
+    <nav className="fixed top-0 left-0 right-0 z-40 animate-fade-in-up-blur">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
         <div className="flex items-center justify-between">
           {/* Spacer (keeps pill centered on desktop) */}
@@ -36,9 +36,8 @@ const Navbar = () => {
               <div className="hidden md:flex items-center gap-10">
                 <Link
                   to="/"
-                  className={`font-inter text-base transition-all duration-300 relative group ${
-                    isActive('/') ? 'text-primary-white font-semibold' : 'text-primary-white/60 hover:text-primary-white'
-                  }`}
+                  className={`font-inter text-base transition-all duration-300 relative group ${isActive('/') ? 'text-primary-white font-semibold' : 'text-primary-white/60 hover:text-primary-white'
+                    }`}
                 >
                   Home
                   <span className={`absolute -bottom-1 left-0 h-0.5 bg-primary-olive transition-all duration-300 ${isActive('/') ? 'w-full' : 'w-0 group-hover:w-full'}`} />
@@ -56,9 +55,8 @@ const Navbar = () => {
                 >
                   <button
                     type="button"
-                    className={`inline-flex items-center gap-1 font-inter text-base transition-all duration-300 relative group ${
-                      isWorksActive() ? 'text-primary-white font-semibold' : 'text-primary-white/60 hover:text-primary-white'
-                    }`}
+                    className={`inline-flex items-center gap-1 font-inter text-base transition-all duration-300 relative group ${isWorksActive() ? 'text-primary-white font-semibold' : 'text-primary-white/60 hover:text-primary-white'
+                      }`}
                     aria-haspopup="menu"
                     aria-expanded={worksOpen}
                     onClick={() => setWorksOpen((v) => !v)}
@@ -79,18 +77,16 @@ const Navbar = () => {
                       <Link
                         to="/works"
                         role="menuitem"
-                        className={`block px-4 py-3 font-inter text-sm transition-all duration-300 hover:bg-white/5 hover:translate-x-1 ${
-                          isActive('/works') ? 'text-primary-white' : 'text-primary-white/70 hover:text-primary-white'
-                        }`}
+                        className={`block px-4 py-3 font-inter text-sm transition-all duration-300 hover:bg-white/5 hover:translate-x-1 ${isActive('/works') ? 'text-primary-white' : 'text-primary-white/70 hover:text-primary-white'
+                          }`}
                       >
                         Works
                       </Link>
                       <Link
                         to="/works/products"
                         role="menuitem"
-                        className={`block px-4 py-3 font-inter text-sm transition-all duration-300 hover:bg-white/5 hover:translate-x-1 ${
-                          isActive('/works/products') ? 'text-primary-white' : 'text-primary-white/70 hover:text-primary-white'
-                        }`}
+                        className={`block px-4 py-3 font-inter text-sm transition-all duration-300 hover:bg-white/5 hover:translate-x-1 ${isActive('/works/products') ? 'text-primary-white' : 'text-primary-white/70 hover:text-primary-white'
+                          }`}
                       >
                         Products
                       </Link>
@@ -100,9 +96,8 @@ const Navbar = () => {
 
                 <Link
                   to="/about"
-                  className={`font-inter text-base transition-all duration-300 relative group ${
-                    isActive('/about') ? 'text-primary-white font-semibold' : 'text-primary-white/60 hover:text-primary-white'
-                  }`}
+                  className={`font-inter text-base transition-all duration-300 relative group ${isActive('/about') ? 'text-primary-white font-semibold' : 'text-primary-white/60 hover:text-primary-white'
+                    }`}
                 >
                   About
                   <span className={`absolute -bottom-1 left-0 h-0.5 bg-primary-olive transition-all duration-300 ${isActive('/about') ? 'w-full' : 'w-0 group-hover:w-full'}`} />
@@ -110,9 +105,8 @@ const Navbar = () => {
 
                 <Link
                   to="/contact"
-                  className={`font-inter text-base transition-all duration-300 relative group ${
-                    isActive('/contact') ? 'text-primary-white font-semibold' : 'text-primary-white/60 hover:text-primary-white'
-                  }`}
+                  className={`font-inter text-base transition-all duration-300 relative group ${isActive('/contact') ? 'text-primary-white font-semibold' : 'text-primary-white/60 hover:text-primary-white'
+                    }`}
                 >
                   Contact
                   <span className={`absolute -bottom-1 left-0 h-0.5 bg-primary-olive transition-all duration-300 ${isActive('/contact') ? 'w-full' : 'w-0 group-hover:w-full'}`} />
@@ -143,18 +137,16 @@ const Navbar = () => {
             <div className="p-4 space-y-1">
               <Link
                 to="/"
-                className={`block px-3 py-2 rounded-xl font-inter text-sm transition-all duration-300 hover:translate-x-1 ${
-                  isActive('/') ? 'text-primary-white bg-white/5' : 'text-primary-white/80 hover:text-primary-white hover:bg-white/5'
-                }`}
+                className={`block px-3 py-2 rounded-xl font-inter text-sm transition-all duration-300 hover:translate-x-1 ${isActive('/') ? 'text-primary-white bg-white/5' : 'text-primary-white/80 hover:text-primary-white hover:bg-white/5'
+                  }`}
               >
                 Home
               </Link>
 
               <button
                 type="button"
-                className={`w-full flex items-center justify-between px-3 py-2 rounded-xl font-inter text-sm transition-all duration-300 ${
-                  isWorksActive() ? 'text-primary-white bg-white/5' : 'text-primary-white/80 hover:text-primary-white hover:bg-white/5'
-                }`}
+                className={`w-full flex items-center justify-between px-3 py-2 rounded-xl font-inter text-sm transition-all duration-300 ${isWorksActive() ? 'text-primary-white bg-white/5' : 'text-primary-white/80 hover:text-primary-white hover:bg-white/5'
+                  }`}
                 onClick={() => setWorksOpen((v) => !v)}
                 aria-expanded={worksOpen}
               >
@@ -166,17 +158,15 @@ const Navbar = () => {
                 <div className="pl-3 animate-fade-in">
                   <Link
                     to="/works"
-                    className={`block px-3 py-2 rounded-xl font-inter text-sm transition-all duration-300 hover:translate-x-1 ${
-                      isActive('/works') ? 'text-primary-white' : 'text-primary-white/70 hover:text-primary-white'
-                    }`}
+                    className={`block px-3 py-2 rounded-xl font-inter text-sm transition-all duration-300 hover:translate-x-1 ${isActive('/works') ? 'text-primary-white' : 'text-primary-white/70 hover:text-primary-white'
+                      }`}
                   >
                     Works
                   </Link>
                   <Link
                     to="/works/products"
-                    className={`block px-3 py-2 rounded-xl font-inter text-sm transition-all duration-300 hover:translate-x-1 ${
-                      isActive('/works/products') ? 'text-primary-white' : 'text-primary-white/70 hover:text-primary-white'
-                    }`}
+                    className={`block px-3 py-2 rounded-xl font-inter text-sm transition-all duration-300 hover:translate-x-1 ${isActive('/works/products') ? 'text-primary-white' : 'text-primary-white/70 hover:text-primary-white'
+                      }`}
                   >
                     Products
                   </Link>
@@ -185,18 +175,16 @@ const Navbar = () => {
 
               <Link
                 to="/about"
-                className={`block px-3 py-2 rounded-xl font-inter text-sm transition-all duration-300 hover:translate-x-1 ${
-                  isActive('/about') ? 'text-primary-white bg-white/5' : 'text-primary-white/80 hover:text-primary-white hover:bg-white/5'
-                }`}
+                className={`block px-3 py-2 rounded-xl font-inter text-sm transition-all duration-300 hover:translate-x-1 ${isActive('/about') ? 'text-primary-white bg-white/5' : 'text-primary-white/80 hover:text-primary-white hover:bg-white/5'
+                  }`}
               >
                 About
               </Link>
 
               <Link
                 to="/contact"
-                className={`block px-3 py-2 rounded-xl font-inter text-sm transition-all duration-300 hover:translate-x-1 ${
-                  isActive('/contact') ? 'text-primary-white bg-white/5' : 'text-primary-white/80 hover:text-primary-white hover:bg-white/5'
-                }`}
+                className={`block px-3 py-2 rounded-xl font-inter text-sm transition-all duration-300 hover:translate-x-1 ${isActive('/contact') ? 'text-primary-white bg-white/5' : 'text-primary-white/80 hover:text-primary-white hover:bg-white/5'
+                  }`}
               >
                 Contact
               </Link>

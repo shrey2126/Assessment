@@ -23,25 +23,28 @@ const FAQAccordion = ({
       {items.map((question, idx) => (
         <Reveal key={idx} delayMs={idx * 60}>
           <div
-            className="section-base rounded-xl border border-primary-olive/20 overflow-hidden transition-all duration-300 hover:border-primary-olive/40"
+            className="overflow-hidden transition-all duration-300"
+            style={{
+              background: 'rgba(20, 32, 12, 0.85)',
+              borderRadius: '14px',
+            }}
           >
             <button
               type="button"
               onClick={() => setOpenIdx(openIdx === idx ? null : idx)}
-              className="w-full px-6 py-4 flex justify-between items-center text-left font-inter text-primary-white hover:text-primary-olive transition-colors"
+              className="w-full px-5 py-4 flex justify-between items-center text-left font-inter text-sm text-primary-white hover:text-primary-olive transition-colors"
             >
               <span>{question}</span>
-              <span className={`w-5 h-5 flex-shrink-0 text-xl leading-none transition-transform duration-300 ${openIdx === idx ? 'rotate-45' : ''}`}>
+              <span className={`w-5 h-5 flex-shrink-0 text-lg leading-none transition-transform duration-300 text-gray-400 ${openIdx === idx ? 'rotate-45' : ''}`}>
                 +
               </span>
             </button>
             <div
-              className={`grid accordion-content ${
-                openIdx === idx ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'
-              }`}
+              className={`grid accordion-content ${openIdx === idx ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'
+                }`}
             >
               <div className="overflow-hidden">
-                <div className="px-6 pb-4 text-primary-muted text-sm md:text-base font-inter">
+                <div className="px-5 pb-4 text-primary-muted text-sm font-inter">
                   Professional answer tailored to your specific needs and project requirements. We ensure clear communication and deliver high-quality results.
                 </div>
               </div>
