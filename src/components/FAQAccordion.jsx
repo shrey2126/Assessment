@@ -23,7 +23,7 @@ const FAQAccordion = ({
       {items.map((question, idx) => (
         <Reveal key={idx} delayMs={idx * 60}>
           <div
-            className="bg-[#1a2410] rounded-xl border border-primary-olive/20 overflow-hidden transition-all duration-300 hover:border-primary-olive/40"
+            className="section-base rounded-xl border border-primary-olive/20 overflow-hidden transition-all duration-300 hover:border-primary-olive/40"
           >
             <button
               type="button"
@@ -55,7 +55,7 @@ const FAQAccordion = ({
   if (itemsOnly) return accordionList;
 
   return (
-    <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-[#0f1a0a]">
+    <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 section-dark">
       <div className="max-w-6xl mx-auto">
         <div className={`grid grid-cols-1 ${layout === 'split' ? 'lg:grid-cols-2' : ''} gap-12 items-start`}>
           {/* Image - left or top */}

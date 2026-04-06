@@ -11,7 +11,7 @@ const CTASection = ({
   buttonLink = '/contact',
   variant = 'default', // 'default' | 'withImages' | 'minimal'
   cornerImages = [],
-  sectionBg = 'bg-[#0f1a0a]',
+  sectionBg = 'section-dark',
 }) => {
   return (
     <section className={`py-16 md:py-24 px-4 sm:px-6 lg:px-8 ${sectionBg}`}>

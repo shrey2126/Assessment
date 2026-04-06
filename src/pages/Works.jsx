@@ -20,9 +20,17 @@ const Works = () => {
     'What should I do if the weather is bad on the day of my shoot?',
     'How can I contact you to book a session or get a quote?',
   ];
+  const bottomImages = [
+    'https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=300&h=300&fit=crop',
+    'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=300&h=300&fit=crop',
+    'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=300&h=300&fit=crop',
+    'https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=300&h=300&fit=crop',
+  ];
+
+
 
   return (
-    <div className="min-h-screen bg-[#1a2410]">
+    <div className="min-h-screen section-base">
       {/* Selected Works */}
       <section className="pt-20 md:pt-24 pb-16 md:pb-24 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
@@ -87,7 +95,7 @@ const Works = () => {
       />
 
       {/* Visual Notes */}
-      <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-[#1a2410]">
+      <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 section-base">
         <div className="max-w-6xl mx-auto">
           <Reveal>
             <h2 className="text-4xl md:text-5xl font-libre-caslon italic text-primary-white mb-4">
@@ -122,11 +130,29 @@ const Works = () => {
         buttonText="Let's Talk"
         buttonLink="/contact"
       />
-
-      {/* Bottom marquee */}
-      <section className="py-12 md:py-16 px-0 overflow-hidden bg-[#0f1a0a]">
-        <Marquee speed={38} className="py-4">
-          <span className="text-primary-white/90 font-libre-caslon text-xl md:text-2xl italic">Where your ideas meet in storytelling</span>
+      <section className="py-12 md:py-16 px-0 overflow-hidden section-dark">
+        <Marquee speed={40} className="py-4">
+          <span className="inline-flex items-center gap-6 mx-6">
+            <span className="text-primary-white/90 font-libre-caslon text-xl md:text-2xl italic hover:text-shimmer transition-all duration-300">Where your ideas</span>
+            {bottomImages.slice(0, 4).map((img, idx) => (
+              <img
+                key={idx}
+                src={img}
+                alt=""
+                className="w-10 h-10 md:w-12 md:h-12 rounded-lg object-cover flex-shrink-0 hover:scale-125 hover:rotate-12 transition-all duration-300 cursor-pointer"
+              />
+            ))}
+            <span className="text-primary-white/90 font-libre-caslon text-xl md:text-2xl italic hover:text-shimmer transition-all duration-300">meet in</span>
+            {bottomImages.map((img, idx) => (
+              <img
+                key={`b-${idx}`}
+                src={img}
+                alt=""
+                className="w-10 h-10 md:w-12 md:h-12 rounded-lg object-cover flex-shrink-0 hover:scale-125 hover:rotate-12 transition-all duration-300 cursor-pointer"
+              />
+            ))}
+            <span className="text-primary-white/90 font-libre-caslon text-xl md:text-2xl italic hover:text-shimmer transition-all duration-300">storytelling</span>
+          </span>
         </Marquee>
       </section>
     </div>

@@ -37,7 +37,7 @@ const ProcessSteps = ({
           
           return (
             <Reveal key={idx} delayMs={idx * 80}>
-              <div className="bg-[#0f1a0a] rounded-xl border border-primary-olive/20 hover:border-primary-olive/50 transition-all duration-500 overflow-hidden hover:shadow-xl hover:shadow-primary-olive/10">
+              <div className="section-dark rounded-xl border border-primary-olive/20 hover:border-primary-olive/50 transition-all duration-500 overflow-hidden hover:shadow-xl hover:shadow-primary-olive/10">
                 {/* Collapsed: just title row. Expanded: image left + title+desc right */}
                 <div
                   className="cursor-pointer"
@@ -99,7 +99,7 @@ const ProcessSteps = ({
   }
 
   return (
-    <section className={`py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-[#1a2410]`}>
+    <section className={`py-16 md:py-24 px-4 sm:px-6 lg:px-8 section-base`}>
       <div className={variant === 'compact' ? 'max-w-4xl mx-auto' : 'max-w-6xl mx-auto'}>
         {content}
       </div>

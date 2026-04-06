@@ -23,16 +23,16 @@ const IntroOverlay = ({ onComplete }) => {
   useEffect(() => {
     const handleMouseMove = (e) => {
       setCursorPosition({ x: e.clientX, y: e.clientY });
-      
+
       // Add new trail
       const newTrail = {
         id: Date.now() + Math.random(),
         x: e.clientX,
         y: e.clientY,
       };
-      
+
       setTrails(prev => [...prev, newTrail]);
-      
+
       // Remove trail after animation
       setTimeout(() => {
         setTrails(prev => prev.filter(trail => trail.id !== newTrail.id));
@@ -55,17 +55,66 @@ const IntroOverlay = ({ onComplete }) => {
   }
 
   return (
-    <div 
-      className={`fixed inset-0 z-[100] flex items-center justify-center transition-all duration-1000 ${
-        isVisible ? 'opacity-100' : 'opacity-0'
-      }`}
+    <div
+      className={`fixed inset-0 z-[100] flex items-center justify-center transition-all duration-1000 ${isVisible ? 'opacity-100' : 'opacity-0'
+        }`}
       style={{
-        background: 'linear-gradient(135deg, #0B1100 0%, #1a2410 30%, #2a3a1f 60%, #3d5228 100%)',
+        background: 'linear-gradient(135deg, #060d02 0%, #0d1a06 25%, #162608 50%, #1e3410 75%, #0a1404 100%)',
         backgroundSize: '400% 400%',
-        animation: 'gradientShift 15s ease infinite',
+        animation: 'gradientShift 12s ease infinite',
         cursor: 'none'
       }}
     >
+      {/* Grid — top right corner, appears after content loads */}
+      <div
+        className="absolute top-0 right-0 pointer-events-none"
+        style={{
+          width: '220px',
+          height: '180px',
+          backgroundImage: `
+            linear-gradient(rgba(200,210,190,0.18) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(200,210,190,0.18) 1px, transparent 1px)
+          `,
+          backgroundSize: '28px 28px',
+          maskImage: 'linear-gradient(to bottom left, black 0%, transparent 80%)',
+          WebkitMaskImage: 'linear-gradient(to bottom left, black 0%, transparent 80%)',
+          opacity: animationPhase >= 2 ? 1 : 0,
+          transform: animationPhase >= 2 ? 'translate(0,0)' : 'translate(20px,-20px)',
+          transition: 'opacity 1.2s ease 0.6s, transform 1.2s ease 0.6s',
+        }}
+      />
+      {/* Grid — bottom left corner, appears after content loads */}
+      <div
+        className="absolute bottom-0 left-0 pointer-events-none"
+        style={{
+          width: '220px',
+          height: '180px',
+          backgroundImage: `
+            linear-gradient(rgba(200,210,190,0.18) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(200,210,190,0.18) 1px, transparent 1px)
+          `,
+          backgroundSize: '28px 28px',
+          maskImage: 'linear-gradient(to top right, black 0%, transparent 80%)',
+          WebkitMaskImage: 'linear-gradient(to top right, black 0%, transparent 80%)',
+          opacity: animationPhase >= 2 ? 1 : 0,
+          transform: animationPhase >= 2 ? 'translate(0,0)' : 'translate(-20px,20px)',
+          transition: 'opacity 1.2s ease 0.8s, transform 1.2s ease 0.8s',
+        }}
+      />
+      {/* Bottom-right description text */}
+      <div
+        className="absolute bottom-8 right-8 text-right max-w-[220px]"
+        style={{
+          opacity: animationPhase >= 2 ? 1 : 0,
+          transform: animationPhase >= 2 ? 'translateY(0)' : 'translateY(12px)',
+          transition: 'opacity 1s ease 0.4s, transform 1s ease 0.4s',
+        }}
+      >
+        <p className="text-xs text-gray-400 leading-relaxed font-inter">
+          Independent photographer specialized in<br />
+          editorial portraits and visual narratives.
+        </p>
+      </div>
       {/* Cursor trails */}
       {trails.map((trail) => (
         <div
@@ -140,7 +189,7 @@ const IntroOverlay = ({ onComplete }) => {
 
         {/* Animated circular images container - Professional merge animation */}
         <div className="relative flex items-center justify-center mb-20" style={{ height: '160px' }}>
-          <div 
+          <div
             className="relative"
             style={{
               width: animationPhase >= 2 ? '420px' : '340px',
@@ -149,7 +198,7 @@ const IntroOverlay = ({ onComplete }) => {
             }}
           >
             {/* Left circular image - Camera equipment */}
-            <div 
+            <div
               className="absolute top-1/2 transform -translate-y-1/2 overflow-hidden"
               style={{
                 width: '160px',
@@ -163,15 +212,15 @@ const IntroOverlay = ({ onComplete }) => {
                 transform: animationPhase >= 1 ? 'translateY(-50%) scale(1)' : 'translateY(-50%) scale(0.8)'
               }}
             >
-              <img 
-                src="https://images.unsplash.com/photo-1606925797300-0b35e9d1794e?w=400&h=400&fit=crop" 
+              <img
+                src="https://images.unsplash.com/photo-1606925797300-0b35e9d1794e?w=400&h=400&fit=crop"
                 alt="Camera equipment"
                 className="w-full h-full object-cover"
               />
             </div>
 
             {/* Right circular image - Photographer */}
-            <div 
+            <div
               className="absolute top-1/2 transform -translate-y-1/2 overflow-hidden"
               style={{
                 width: '160px',
@@ -185,15 +234,15 @@ const IntroOverlay = ({ onComplete }) => {
                 transform: animationPhase >= 1 ? 'translateY(-50%) scale(1)' : 'translateY(-50%) scale(0.8)'
               }}
             >
-              <img 
-                src="https://images.unsplash.com/photo-1554048612-b6a482bc67e5?w=400&h=400&fit=crop" 
+              <img
+                src="https://images.unsplash.com/photo-1554048612-b6a482bc67e5?w=400&h=400&fit=crop"
                 alt="Photographer"
                 className="w-full h-full object-cover"
               />
             </div>
 
             {/* Middle connecting pill shape - appears during merge */}
-            <div 
+            <div
               className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 overflow-hidden"
               style={{
                 width: animationPhase >= 2 ? '260px' : '0px',
@@ -206,8 +255,8 @@ const IntroOverlay = ({ onComplete }) => {
                 background: 'linear-gradient(90deg, rgba(137, 168, 74, 0.1) 0%, rgba(137, 168, 74, 0.05) 100%)'
               }}
             >
-              <img 
-                src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?w=600&h=400&fit=crop" 
+              <img
+                src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?w=600&h=400&fit=crop"
                 alt="Photography work"
                 className="w-full h-full object-cover"
                 style={{
@@ -299,15 +348,9 @@ const IntroOverlay = ({ onComplete }) => {
         }
 
         @keyframes gradientShift {
-          0% {
-            background-position: 0% 50%;
-          }
-          50% {
-            background-position: 100% 50%;
-          }
-          100% {
-            background-position: 0% 50%;
-          }
+          0% { background-position: 0% 50%; }
+          50% { background-position: 100% 50%; }
+          100% { background-position: 0% 50%; }
         }
 
         @keyframes trailFade {

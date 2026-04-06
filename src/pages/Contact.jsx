@@ -54,7 +54,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#1a2410]">
+    <div className="min-h-screen section-base">
       {/* Hero - scroll-linked fan-out image stack */}
       <section ref={heroSectionRef} className="pt-20 md:pt-24 pb-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
@@ -98,7 +98,7 @@ const Contact = () => {
       </section>
 
       {/* Let's Create Something Timeless */}
-      <section className="py-12 md:py-16 px-4 sm:px-6 lg:px-8 bg-[#0f1a0a]">
+      <section className="py-12 md:py-16 px-4 sm:px-6 lg:px-8 section-dark">
         <div className="max-w-4xl mx-auto text-center">
           <Reveal>
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-libre-caslon text-primary-white mb-6">
@@ -109,9 +109,9 @@ const Contact = () => {
       </section>
 
       {/* Contact Form */}
-      <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-[#1a2410]">
+      <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 section-base">
         <div className="max-w-2xl mx-auto">
-          <div className="bg-[#0f1a0a] rounded-2xl border border-white/10 p-6 md:p-8 hover:border-primary-olive/30 transition-all duration-500 hover:shadow-xl hover:shadow-primary-olive/10">
+          <div className="section-dark rounded-2xl border border-white/10 p-6 md:p-8 hover:border-primary-olive/30 transition-all duration-500 hover:shadow-xl hover:shadow-primary-olive/10">
             <form onSubmit={handleSubmit} className="space-y-6">
               <Reveal>
                 <div>
@@ -125,7 +125,7 @@ const Contact = () => {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 bg-[#1a2410] border border-white/10 rounded-xl text-primary-white font-inter focus:outline-none focus:border-primary-olive/50 transition-all duration-300 placeholder-primary-muted/60 input-luxury hover:border-white/20"
+                    className="w-full px-4 py-3 section-base border border-white/10 rounded-xl text-primary-white font-inter focus:outline-none focus:border-primary-olive/50 transition-all duration-300 placeholder-primary-muted/60 input-luxury hover:border-white/20"
                     placeholder="Jane Smith"
                   />
                 </div>
@@ -143,7 +143,7 @@ const Contact = () => {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 bg-[#1a2410] border border-white/10 rounded-xl text-primary-white font-inter focus:outline-none focus:border-primary-olive/50 transition-all duration-300 placeholder-primary-muted/60 input-luxury hover:border-white/20"
+                    className="w-full px-4 py-3 section-base border border-white/10 rounded-xl text-primary-white font-inter focus:outline-none focus:border-primary-olive/50 transition-all duration-300 placeholder-primary-muted/60 input-luxury hover:border-white/20"
                     placeholder="jane@example.com"
                   />
                 </div>
@@ -160,7 +160,7 @@ const Contact = () => {
                     name="subject"
                     value={formData.subject}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 bg-[#1a2410] border border-white/10 rounded-xl text-primary-white font-inter focus:outline-none focus:border-primary-olive/50 transition-all duration-300 placeholder-primary-muted/60 input-luxury hover:border-white/20"
+                    className="w-full px-4 py-3 section-base border border-white/10 rounded-xl text-primary-white font-inter focus:outline-none focus:border-primary-olive/50 transition-all duration-300 placeholder-primary-muted/60 input-luxury hover:border-white/20"
                     placeholder="Regarding project inquiry"
                   />
                 </div>
@@ -178,7 +178,7 @@ const Contact = () => {
                     onChange={handleChange}
                     required
                     rows="5"
-                    className="w-full px-4 py-3 bg-[#1a2410] border border-white/10 rounded-xl text-primary-white font-inter focus:outline-none focus:border-primary-olive/50 transition-all duration-300 resize-none placeholder-primary-muted/60 input-luxury hover:border-white/20"
+                    className="w-full px-4 py-3 section-base border border-white/10 rounded-xl text-primary-white font-inter focus:outline-none focus:border-primary-olive/50 transition-all duration-300 resize-none placeholder-primary-muted/60 input-luxury hover:border-white/20"
                     placeholder="Share your session details, style preferences, timeline ideas, or special requests."
                   />
                 </div>
@@ -195,7 +195,7 @@ const Contact = () => {
       </section>
 
       {/* Where your ideas meet - infinite marquee */}
-      <section className="py-12 md:py-16 px-0 overflow-hidden bg-[#0f1a0a]">
+      <section className="py-12 md:py-16 px-0 overflow-hidden section-dark">
         <Marquee speed={40} className="py-4">
           <span className="inline-flex items-center gap-6 mx-6">
             <span className="text-primary-white/90 font-libre-caslon text-xl md:text-2xl italic hover:text-shimmer transition-all duration-300">Where your ideas</span>

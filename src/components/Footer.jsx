@@ -12,7 +12,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-[#0f1a0a] border-t border-white/10">
+    <footer className="section-dark border-t border-white/10">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-14 md:py-20">
         <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-10">
           {/* Left: tagline */}
