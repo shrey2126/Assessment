@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import Icon from './Icon';
 import Reveal from './Reveal';
 
 const FAQAccordion = ({
@@ -32,12 +31,9 @@ const FAQAccordion = ({
               className="w-full px-6 py-4 flex justify-between items-center text-left font-inter text-primary-white hover:text-primary-olive transition-colors"
             >
               <span>{question}</span>
-              <Icon
-                name="chevronDown"
-                className={`w-5 h-5 flex-shrink-0 transition-transform duration-300 ${
-                  openIdx === idx ? 'rotate-180' : ''
-                }`}
-              />
+              <span className={`w-5 h-5 flex-shrink-0 text-xl leading-none transition-transform duration-300 ${openIdx === idx ? 'rotate-45' : ''}`}>
+                +
+              </span>
             </button>
             <div
               className={`grid accordion-content ${

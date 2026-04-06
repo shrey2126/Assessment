@@ -20,6 +20,52 @@ const CTASection = ({
           {/* Corner images - for variant withImages - 2 overlapping pairs on each side */}
           {variant === 'withImages' && cornerImages.length >= 6 && (
             <>
+              {/* Mobile: 2 overlapping images at each corner */}
+              {/* Top Left */}
+              <div className="lg:hidden absolute top-0 left-0 z-10">
+                <div className="relative w-20 h-20">
+                  <div className="absolute top-0 left-0 w-16 h-16 rounded-xl overflow-hidden shadow-xl">
+                    <img src={cornerImages[0]} alt="" className="w-full h-full object-cover" />
+                  </div>
+                  <div className="absolute top-5 left-5 w-16 h-16 rounded-xl overflow-hidden shadow-xl">
+                    <img src={cornerImages[1]} alt="" className="w-full h-full object-cover" />
+                  </div>
+                </div>
+              </div>
+              {/* Top Right */}
+              <div className="lg:hidden absolute top-0 right-0 z-10">
+                <div className="relative w-20 h-20">
+                  <div className="absolute top-0 right-0 w-16 h-16 rounded-xl overflow-hidden shadow-xl">
+                    <img src={cornerImages[4]} alt="" className="w-full h-full object-cover" />
+                  </div>
+                  <div className="absolute top-5 right-5 w-16 h-16 rounded-xl overflow-hidden shadow-xl">
+                    <img src={cornerImages[5]} alt="" className="w-full h-full object-cover" />
+                  </div>
+                </div>
+              </div>
+              {/* Bottom Left */}
+              <div className="lg:hidden absolute bottom-0 left-0 z-10">
+                <div className="relative w-20 h-20">
+                  <div className="absolute bottom-0 left-0 w-16 h-16 rounded-xl overflow-hidden shadow-xl">
+                    <img src={cornerImages[2]} alt="" className="w-full h-full object-cover" />
+                  </div>
+                  <div className="absolute bottom-5 left-5 w-16 h-16 rounded-xl overflow-hidden shadow-xl">
+                    <img src={cornerImages[3]} alt="" className="w-full h-full object-cover" />
+                  </div>
+                </div>
+              </div>
+              {/* Bottom Right */}
+              <div className="lg:hidden absolute bottom-0 right-0 z-10">
+                <div className="relative w-20 h-20">
+                  <div className="absolute bottom-0 right-0 w-16 h-16 rounded-xl overflow-hidden shadow-xl">
+                    <img src={cornerImages[0]} alt="" className="w-full h-full object-cover" />
+                  </div>
+                  <div className="absolute bottom-5 right-5 w-16 h-16 rounded-xl overflow-hidden shadow-xl">
+                    <img src={cornerImages[1]} alt="" className="w-full h-full object-cover" />
+                  </div>
+                </div>
+              </div>
+
               {/* Top Left - 2 overlapping images */}
               <div className="hidden lg:block absolute top-4 left-0 -translate-x-16 xl:-translate-x-20 z-10">
                 <div className="relative">
@@ -70,7 +116,7 @@ const CTASection = ({
             </>
           )}
 
-          <div className="text-center py-12 lg:py-20 relative z-0">
+          <div className="text-center py-28 lg:py-20 relative z-0">
             <Reveal>
               {preTitle && (
                 <p className="text-2xl sm:text-3xl md:text-4xl font-libre-caslon italic text-primary-white mb-2">

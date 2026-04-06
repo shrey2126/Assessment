@@ -121,9 +121,6 @@ const Navbar = () => {
 
               {/* Mobile compact pill */}
               <div className="md:hidden flex items-center justify-between gap-4">
-                <Link to="/" className="font-inter text-sm text-primary-white">
-                  Chirag
-                </Link>
                 <button
                   type="button"
                   onClick={() => setIsOpen((v) => !v)}

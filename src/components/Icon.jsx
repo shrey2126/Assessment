@@ -59,12 +59,15 @@ const Icon = ({ name, className = "w-6 h-6" }) => {
     ),
   };
 
+  const fillIcons = ['instagram', 'facebook', 'pinterest'];
+  const isFillIcon = fillIcons.includes(name);
+
   return (
     <svg
       className={className}
-      fill="none"
+      fill={isFillIcon ? 'currentColor' : 'none'}
       viewBox="0 0 24 24"
-      stroke="currentColor"
+      stroke={isFillIcon ? 'none' : 'currentColor'}
     >
       {icons[name]}
     </svg>

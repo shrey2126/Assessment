@@ -137,14 +137,14 @@ const About = () => {
       {/* Stats Section */}
       <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-[#0f1a0a]">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-libre-caslon text-primary-white mb-4 text-center">
+          <h2 className="text-3xl md:text-4xl font-libre-caslon text-primary-white mb-4 text-left md:text-center">
             Dedicated to <span className="italic">transforming</span> perspectives
           </h2>
-          <p className="text-3xl md:text-4xl font-libre-caslon text-primary-white mb-12 text-center">
+          <p className="text-3xl md:text-4xl font-libre-caslon text-primary-white mb-12 text-left md:text-center">
             through high-end <span className="italic">visual</span> storytelling.
           </p>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-4 text-center">
             <Reveal delayMs={0}>
               <div ref={brandsRef} className="p-6 transform transition-all duration-700 hover:scale-105">
                 <div className="text-5xl md:text-6xl lg:text-7xl font-libre-caslon italic text-primary-white mb-2">

@@ -1,6 +1,4 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
-import Icon from './Icon';
 import Reveal from './Reveal';
 
 const ProcessSteps = ({
@@ -40,62 +38,53 @@ const ProcessSteps = ({
           return (
             <Reveal key={idx} delayMs={idx * 80}>
               <div className="bg-[#0f1a0a] rounded-xl border border-primary-olive/20 hover:border-primary-olive/50 transition-all duration-500 overflow-hidden hover:shadow-xl hover:shadow-primary-olive/10">
-                {/* Header - Always Visible */}
-                <div 
-                  className="p-6 flex items-center gap-4 cursor-pointer group"
+                {/* Collapsed: just title row. Expanded: image left + title+desc right */}
+                <div
+                  className="cursor-pointer"
                   onClick={() => toggleExpand(idx)}
                 >
-                  <div className={`w-12 h-12 rounded-full bg-primary-olive flex items-center justify-center flex-shrink-0 transition-all duration-500 ${isExpanded ? 'scale-110 rotate-12' : 'group-hover:scale-110 group-hover:rotate-12'} group-hover:shadow-lg group-hover:shadow-primary-olive/50`}>
-                    <span className="text-primary-black text-xl font-bold font-libre-caslon">{step.num}</span>
-                  </div>
-                  <div className="flex-1">
-                    <h3 className={`text-xl font-inter font-semibold transition-all duration-300 ${isExpanded ? 'text-primary-olive' : 'text-primary-white group-hover:text-primary-olive'}`}>
-                      {step.title}
-                    </h3>
-                    {variant === 'default' && !isExpanded && (
-                      <p className="text-sm font-inter text-primary-muted mt-1 transition-all duration-300 group-hover:text-primary-white/80">
-                        {step.desc}
-                      </p>
-                    )}
-                  </div>
-                  <Icon 
-                    name={isExpanded ? "chevronDown" : "chevronRight"} 
-                    className={`w-5 h-5 text-primary-olive flex-shrink-0 transition-all duration-300 ${isExpanded ? 'rotate-0' : 'group-hover:translate-x-2'}`} 
-                  />
-                </div>
-
-                {/* Expanded Content */}
-                <div 
-                  className={`grid transition-all duration-500 ease-in-out ${isExpanded ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'}`}
-                >
-                  <div className="overflow-hidden">
-                    <div className="p-6 pt-0">
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 border-t border-primary-olive/20 pt-6">
-                        {/* Image */}
-                        {step.image && (
-                          <div className="rounded-xl overflow-hidden img-hover-luxury">
-                            <img 
-                              src={step.image} 
-                              alt={step.title}
-                              className="w-full h-48 md:h-64 object-cover"
-                            />
-                          </div>
-                        )}
-                        
-                        {/* Description */}
-                        <div className="flex flex-col justify-center">
-                          <p className="text-base font-inter text-primary-muted leading-relaxed">
-                            {step.desc}
-                          </p>
-                          {step.details && (
-                            <p className="text-sm font-inter text-primary-muted/80 mt-4 leading-relaxed">
-                              {step.details}
-                            </p>
-                          )}
+                  {isExpanded ? (
+                    /* Expanded layout: image left, content right */
+                    <div className="p-4 flex flex-col sm:flex-row gap-4 items-stretch">
+                      {step.image && (
+                        <div className="sm:w-2/5 rounded-xl overflow-hidden flex-shrink-0">
+                          <img
+                            src={step.image}
+                            alt={step.title}
+                            className="w-full h-48 sm:h-full object-cover"
+                          />
                         </div>
+                      )}
+                      <div className="flex flex-col justify-center gap-3 flex-1 py-2">
+                        <div className="flex items-center gap-3">
+                          <div className="w-10 h-10 rounded-full bg-primary-olive flex items-center justify-center flex-shrink-0">
+                            <span className="text-primary-black text-lg font-bold font-libre-caslon">{step.num}</span>
+                          </div>
+                          <h3 className="text-xl font-inter font-semibold text-primary-white">
+                            {step.title}
+                          </h3>
+                        </div>
+                        <p className="text-base font-inter text-primary-muted leading-relaxed">
+                          {step.desc}
+                        </p>
+                        {step.details && (
+                          <p className="text-sm font-inter text-primary-muted/80 leading-relaxed">
+                            {step.details}
+                          </p>
+                        )}
                       </div>
                     </div>
-                  </div>
+                  ) : (
+                    /* Collapsed layout: just icon + title */
+                    <div className="p-6 flex items-center gap-4 group">
+                      <div className="w-12 h-12 rounded-full bg-primary-olive flex items-center justify-center flex-shrink-0 transition-all duration-300 group-hover:scale-110 group-hover:rotate-12 group-hover:shadow-lg group-hover:shadow-primary-olive/50">
+                        <span className="text-primary-black text-xl font-bold font-libre-caslon">{step.num}</span>
+                      </div>
+                      <h3 className="text-xl font-inter font-semibold text-primary-white group-hover:text-primary-olive transition-colors duration-300">
+                        {step.title}
+                      </h3>
+                    </div>
+                  )}
                 </div>
               </div>
             </Reveal>
