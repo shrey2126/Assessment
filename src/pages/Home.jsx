@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import Button from '../components/Button';
+import Icon from '../components/Icon';
 import ProcessSteps from '../components/ProcessSteps';
 import FAQAccordion from '../components/FAQAccordion';
 import ImageGrid from '../components/ImageGrid';
@@ -103,7 +104,7 @@ const Home = () => {
 
       <div className="relative z-10">
       {/* Hero - Three Row Scrolling Gallery - Full Width */}
-      <section className="pt-20 md:pt-24 pb-6">
+      <section className="pt-6 md:pt-10 pb-6">
         <div className="w-full">
           <Reveal>
             <ThreeRowScrollGallery images={galleryImages} />
@@ -155,8 +156,8 @@ const Home = () => {
       <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-[#0f1a0a]/95">
         <div className="max-w-6xl mx-auto">
           <Reveal>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-inter font-semibold text-primary-white mb-12">
-              Featured <span className="italic">Works</span> For Our Incredible <span className="font-bold">Clients</span>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-inter text-primary-white mb-12">
+              Featured <span className=" font-libre-caslon italic">Works</span> For Our Incredible <span className=" font-libre-caslon italic">Clients</span>
             </h2>
           </Reveal>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
@@ -283,8 +284,11 @@ const Home = () => {
                             rel="noopener noreferrer"
                             className="inline-block"
                           >
-                            <Button variant="primary" className="uppercase tracking-wider">
-                              Follow on Instagram
+                            <Button variant="primary" className="tracking-wider">
+                              <span className="flex items-center gap-2">
+                                <Icon name="instagram" className="w-5 h-5" />
+                                Follow on Instagram
+                              </span>
                             </Button>
                           </a>
               </div>
