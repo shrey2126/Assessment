@@ -53,8 +53,8 @@ const Works = () => {
             </p>
           </Reveal>
 
-          <div className="mt-12 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
-            {projects.map((project, idx) => (
+          <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
+            {projects.slice(0, 6).map((project, idx) => (
               <Reveal key={project.id} direction={idx % 2 === 0 ? 'left' : 'right'} delayMs={idx * 55} durationMs={850}>
                 <div
                   onClick={() => setSelectedMedia(project)}

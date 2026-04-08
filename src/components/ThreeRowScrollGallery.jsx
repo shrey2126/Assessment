@@ -42,10 +42,10 @@ const ThreeRowScrollGallery = ({ images = [] }) => {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 </div>
               ))}
-              
+
               {/* Center Text */}
               <div className="flex-shrink-0 px-8 md:px-16">
-                <h2 className="text-3xl md:text-5xl lg:text-6xl font-libre-caslon text-white whitespace-nowrap">
+                <h2 className="text-xl sm:text-3xl md:text-5xl lg:text-6xl font-libre-caslon text-white whitespace-nowrap">
                   Curated <span className="italic text-shimmer">Atmospheres</span>
                 </h2>
               </div>

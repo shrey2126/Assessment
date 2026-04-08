@@ -160,37 +160,50 @@ const About = () => {
       <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 section-dark">
         <div className="max-w-6xl mx-auto">
           <Reveal>
-            <h2 className="text-3xl md:text-4xl font-libre-caslon text-primary-white mb-2">
-              Dedicated to <span className="italic">transforming</span> perspectives
+            <h2 className="text-3xl md:text-4xl font-inter font-bold text-primary-white mb-14 leading-tight">
+              {/* Mobile: each phrase on its own line */}
+              <span className="block md:hidden">
+                Dedicated to{' '}
+                <span className="font-libre-caslon italic">transforming</span>
+                <br />
+                perspectives through
+                <br />
+                high-end <span className="font-libre-caslon italic">visual</span>
+                <br />
+                storytelling.
+              </span>
+              {/* Desktop: 2 natural lines */}
+              <span className="hidden md:block">
+                Dedicated to <span className="font-libre-caslon italic">transforming</span> perspectives
+                <br />
+                through high-end <span className="font-libre-caslon italic">visual</span> storytelling.
+              </span>
             </h2>
-            <p className="text-3xl md:text-4xl font-libre-caslon text-primary-white mb-14">
-              through high-end <span className="italic">visual</span> storytelling.
-            </p>
           </Reveal>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center mt-14">
             <Reveal delayMs={0}>
               <div ref={brandsRef} className="p-4">
-                <div className="text-5xl md:text-6xl font-libre-caslon italic text-primary-white mb-1">{brandsCount}+</div>
-                <div className="text-sm font-inter text-primary-muted uppercase tracking-widest">Brands</div>
+                <div className="text-6xl md:text-6xl font-libre-caslon italic text-primary-white mb-1">{brandsCount}+</div>
+                <div className="text-sm font-inter text-primary-muted tracking-widest">Brands</div>
               </div>
             </Reveal>
             <Reveal delayMs={80}>
               <div ref={shootsRef} className="p-4">
-                <div className="text-5xl md:text-6xl font-libre-caslon italic text-primary-white mb-1">{shootsCount}+</div>
-                <div className="text-sm font-inter text-primary-muted uppercase tracking-widest">PhotoShoots</div>
+                <div className="text-6xl md:text-6xl font-libre-caslon italic text-primary-white mb-1">{shootsCount}+</div>
+                <div className="text-sm font-inter text-primary-muted tracking-widest">PhotoShoots</div>
               </div>
             </Reveal>
             <Reveal delayMs={160}>
               <div ref={yearsRef} className="p-4">
-                <div className="text-5xl md:text-6xl font-libre-caslon italic text-primary-white mb-1">{yearsCount}+</div>
-                <div className="text-sm font-inter text-primary-muted uppercase tracking-widest">Years Experience</div>
+                <div className="text-6xl md:text-6xl font-libre-caslon italic text-primary-white mb-1">{yearsCount}+</div>
+                <div className="text-sm font-inter text-primary-muted tracking-widest">Years Experience</div>
               </div>
             </Reveal>
             <Reveal delayMs={240}>
               <div ref={awardsRef} className="p-4">
-                <div className="text-5xl md:text-6xl font-libre-caslon italic text-primary-white mb-1">{awardsCount}+</div>
-                <div className="text-sm font-inter text-primary-muted uppercase tracking-widest">Awards Won</div>
+                <div className="text-6xl md:text-6xl font-libre-caslon italic text-primary-white mb-1">{awardsCount}+</div>
+                <div className="text-sm font-inter text-primary-muted tracking-widest">Awards Won</div>
               </div>
             </Reveal>
           </div>

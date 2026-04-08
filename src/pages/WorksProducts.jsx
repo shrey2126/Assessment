@@ -130,14 +130,7 @@ const WorksProducts = () => {
 
           {/* Bottom actions */}
           <Reveal direction="up" delayMs={200} durationMs={900}>
-            <div className="flex gap-3 mt-10">
-              <Link to="/works">
-                <Button variant="secondary">All Works</Button>
-              </Link>
-              <Link to="/contact">
-                <Button variant="primary">Enquire</Button>
-              </Link>
-            </div>
+
           </Reveal>
         </div>
       </section>

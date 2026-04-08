@@ -118,11 +118,7 @@ const Home = () => {
                     key={idx}
                     src={img}
                     alt=""
-                    className="w-10 h-10 md:w-12 md:h-12 rounded-lg object-cover hover:scale-125 hover:rotate-12 transition-all duration-300 cursor-pointer shadow-lg"
-                    style={{
-                      marginLeft: idx > 0 ? '-12px' : '0',
-                      zIndex: heroInlineImages.length - idx,
-                    }}
+                    className="w-10 h-10 md:w-12 md:h-12 object-cover hover:scale-110 transition-all duration-300 cursor-pointer"
                   />
                 ))}
               </span>{' '}
@@ -152,7 +148,7 @@ const Home = () => {
           <div className="max-w-6xl mx-auto">
             <Reveal direction="left" durationMs={900}>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-inter text-primary-white mb-12">
-                Featured <span className="font-libre-caslon italic">Works</span> For Our Incredible <span className="font-libre-caslon italic">Clients</span>
+                Featured <span className="font-libre-caslon italic">Works</span> For Our<br /> Incredible <span className="font-libre-caslon italic">Clients</span>
               </h2>
             </Reveal>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
@@ -161,7 +157,7 @@ const Home = () => {
                   <img
                     src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1200&h=800&fit=crop"
                     alt="F&B Restaurant"
-                    className="w-full h-[400px] md:h-[500px] object-cover img-hover-luxury"
+                    className="w-full h-[300px] sm:h-[400px] md:h-[500px] object-cover img-hover-luxury"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 </div>
@@ -242,17 +238,29 @@ const Home = () => {
                 Curious about collaborating? Here are some helpful answers to your FAQs,<br className="hidden sm:block" /> designed to simplify the process!
               </p>
             </Reveal>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
-              <Reveal direction="left" distance={65} durationMs={1000}>
-                <div className="rounded-2xl overflow-hidden" style={{ height: '420px' }}>
-                  <img
-                    src="https://images.unsplash.com/photo-1551024506-0bccd828d307?w=800&h=900&fit=crop"
-                    alt="FAQ"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              </Reveal>
-              <Reveal direction="right" distance={65} delayMs={100} durationMs={1000}>
+            <div className="hidden lg:grid lg:grid-cols-5 gap-8 items-stretch">
+              {/* Image — 2/5 width, stretches to accordion height */}
+              <div className="col-span-2 flex flex-col">
+                <Reveal direction="left" distance={65} durationMs={1000} className="flex-1 flex flex-col">
+                  <div className="rounded-2xl overflow-hidden flex-1">
+                    <img
+                      src="https://images.unsplash.com/photo-1551024506-0bccd828d307?w=800&h=900&fit=crop"
+                      alt="FAQ"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                </Reveal>
+              </div>
+              {/* Accordion — 3/5 width */}
+              <div className="col-span-3 flex flex-col justify-center">
+                <Reveal direction="right" distance={65} delayMs={100} durationMs={1000}>
+                  <FAQAccordion items={faqItems} itemsOnly />
+                </Reveal>
+              </div>
+            </div>
+            {/* Mobile: accordion only */}
+            <div className="lg:hidden">
+              <Reveal direction="up" durationMs={1000}>
                 <FAQAccordion items={faqItems} itemsOnly />
               </Reveal>
             </div>
@@ -263,8 +271,8 @@ const Home = () => {
         <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 section-dark">
           <div className="max-w-6xl mx-auto">
             <Reveal direction="up" durationMs={900}>
-              <h2 className="text-4xl md:text-5xl font-libre-caslon italic text-primary-white mb-4">
-                Visual / <span className="not-italic">Notes</span>
+              <h2 className="text-4xl md:text-5xl font-libre-caslon text-primary-white mb-4">
+                <span className="italic">Visual</span> <span className="not-italic">Notes</span>
               </h2>
               <p className="text-lg font-inter text-primary-muted mb-12 leading-relaxed">
                 Ongoing stories, experiments, and moments shared in real time on Instagram.
@@ -296,7 +304,7 @@ const Home = () => {
         <section className="py-12 md:py-16 px-0 overflow-hidden section-dark">
           <Marquee speed={40} className="py-4">
             <span className="inline-flex items-center gap-6 mx-6">
-              <span className="text-primary-white/90 font-libre-caslon text-xl md:text-2xl italic hover:text-shimmer transition-all duration-300">Where your ideas</span>
+              <span className="text-primary-white/90 font-inter font-bold text-4xl md:text-5xl hover:text-shimmer transition-all duration-300">Where your <span className="font-libre-caslon italic">ideas</span></span>
               {bottomImages.slice(0, 4).map((img, idx) => (
                 <img
                   key={idx}
@@ -305,7 +313,7 @@ const Home = () => {
                   className="w-10 h-10 md:w-12 md:h-12 rounded-lg object-cover flex-shrink-0 hover:scale-125 hover:rotate-12 transition-all duration-300 cursor-pointer"
                 />
               ))}
-              <span className="text-primary-white/90 font-libre-caslon text-xl md:text-2xl italic hover:text-shimmer transition-all duration-300">meet in</span>
+              <span className="text-primary-white/90 font-inter font-bold text-4xl md:text-5xl hover:text-shimmer transition-all duration-300">meet in</span>
               {bottomImages.map((img, idx) => (
                 <img
                   key={`b-${idx}`}
@@ -314,7 +322,7 @@ const Home = () => {
                   className="w-10 h-10 md:w-12 md:h-12 rounded-lg object-cover flex-shrink-0 hover:scale-125 hover:rotate-12 transition-all duration-300 cursor-pointer"
                 />
               ))}
-              <span className="text-primary-white/90 font-libre-caslon text-xl md:text-2xl italic hover:text-shimmer transition-all duration-300">storytelling</span>
+              <span className="text-primary-white/90 font-inter font-bold text-4xl md:text-5xl hover:text-shimmer transition-all duration-300">storytelling</span>
             </span>
           </Marquee>
         </section>

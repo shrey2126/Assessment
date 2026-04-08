@@ -11,7 +11,6 @@ const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    subject: '',
     message: '',
   });
 
@@ -26,7 +25,7 @@ const Contact = () => {
     e.preventDefault();
     console.log('Form submitted:', formData);
     alert('Thank you for your message! I will get back to you soon.');
-    setFormData({ name: '', email: '', subject: '', message: '' });
+    setFormData({ name: '', email: '', message: '' });
   };
 
   const heroImages = [
@@ -148,24 +147,7 @@ const Contact = () => {
                 </div>
               </Reveal>
 
-              <Reveal direction="left" delayMs={120}>
-                <div>
-                  <label htmlFor="subject" className="block text-sm font-inter text-primary-muted mb-2">
-                    Subject
-                  </label>
-                  <input
-                    type="text"
-                    id="subject"
-                    name="subject"
-                    value={formData.subject}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 section-base border border-white/10 rounded-xl text-primary-white font-inter focus:outline-none focus:border-primary-olive/50 transition-all duration-300 placeholder-primary-muted/60 input-luxury hover:border-white/20"
-                    placeholder="Regarding project inquiry"
-                  />
-                </div>
-              </Reveal>
-
-              <Reveal direction="right" delayMs={180}>
+              <Reveal direction="right" delayMs={120}>
                 <div>
                   <label htmlFor="message" className="block text-sm font-inter text-primary-muted mb-2">
                     Message

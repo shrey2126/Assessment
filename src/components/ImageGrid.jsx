@@ -10,8 +10,8 @@ const ImageGrid = ({
   return (
     <div
       className={`grid gap-3 md:gap-4 ${columns === 2
-          ? 'grid-cols-2'
-          : 'grid-cols-2 md:grid-cols-3'
+        ? 'grid-cols-2'
+        : 'grid-cols-3'
         }`}
     >
       {images.map((img, idx) => (

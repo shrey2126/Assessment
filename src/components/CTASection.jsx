@@ -5,7 +5,6 @@ import Reveal from './Reveal';
 const CTASection = ({
   preTitle = '',
   preSubtitle = '',
-  title = 'Ready to bring your vision to life?',
   subtitle = "Let's create something truly unforgettable.",
   buttonText = 'Contact Me',
   buttonLink = '/contact',
@@ -128,10 +127,11 @@ const CTASection = ({
                   {preSubtitle}
                 </p>
               )}
-              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-libre-caslon text-primary-white mb-6 leading-tight">
-                {title}
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-inter text-primary-white mb-6 leading-tight">
+                Ready to bring your<br />
+                <span className="font-libre-caslon italic">vision</span> to <span className="font-libre-caslon italic">life</span>?
               </h2>
-              <p className="text-lg md:text-xl font-inter text-primary-muted mb-8 max-w-2xl mx-auto">
+              <p className="text-sm md:text-base font-inter text-primary-muted mb-8 max-w-md mx-auto">
                 {subtitle}
               </p>
               <Link to={buttonLink}>
