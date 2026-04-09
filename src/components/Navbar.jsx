@@ -25,7 +25,7 @@ const Navbar = () => {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-40 animate-fade-in-up-blur">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+      <div className="site-container pt-4">
         <div className="flex items-center justify-between">
           {/* Spacer (keeps pill centered on desktop) */}
           <div className="hidden md:block w-40" />
@@ -36,7 +36,7 @@ const Navbar = () => {
               <div className="hidden md:flex items-center gap-10">
                 <Link
                   to="/"
-                  className={`font-inter text-base transition-all duration-300 relative group ${isActive('/') ? 'text-primary-white font-semibold' : 'text-primary-white/60 hover:text-primary-white'
+                  className={`font-inter text-sm md:text-base transition-all duration-300 relative group ${isActive('/') ? 'text-primary-white font-semibold' : 'text-primary-white/60 hover:text-primary-white'
                     }`}
                 >
                   Home
@@ -55,7 +55,7 @@ const Navbar = () => {
                 >
                   <button
                     type="button"
-                    className={`inline-flex items-center gap-1 font-inter text-base transition-all duration-300 relative group ${isWorksActive() ? 'text-primary-white font-semibold' : 'text-primary-white/60 hover:text-primary-white'
+                    className={`inline-flex items-center gap-1 font-inter text-sm md:text-base transition-all duration-300 relative group ${isWorksActive() ? 'text-primary-white font-semibold' : 'text-primary-white/60 hover:text-primary-white'
                       }`}
                     aria-haspopup="menu"
                     aria-expanded={worksOpen}
@@ -96,7 +96,7 @@ const Navbar = () => {
 
                 <Link
                   to="/about"
-                  className={`font-inter text-base transition-all duration-300 relative group ${isActive('/about') ? 'text-primary-white font-semibold' : 'text-primary-white/60 hover:text-primary-white'
+                  className={`font-inter text-sm md:text-base transition-all duration-300 relative group ${isActive('/about') ? 'text-primary-white font-semibold' : 'text-primary-white/60 hover:text-primary-white'
                     }`}
                 >
                   About
@@ -105,7 +105,7 @@ const Navbar = () => {
 
                 <Link
                   to="/contact"
-                  className={`font-inter text-base transition-all duration-300 relative group ${isActive('/contact') ? 'text-primary-white font-semibold' : 'text-primary-white/60 hover:text-primary-white'
+                  className={`font-inter text-sm md:text-base transition-all duration-300 relative group ${isActive('/contact') ? 'text-primary-white font-semibold' : 'text-primary-white/60 hover:text-primary-white'
                     }`}
                 >
                   Contact

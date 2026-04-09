@@ -23,10 +23,10 @@ const ProcessSteps = ({
     <>
       {renderSection && (
         <Reveal>
-          <h2 className="text-4xl md:text-5xl font-libre-caslon italic text-primary-white mb-4">
+          <h2 className="section-title md:text-6xl font-libre-caslon italic mb-4">
             {title}
           </h2>
-          <p className="text-lg font-inter text-primary-muted mb-12 max-w-3xl leading-relaxed">
+          <p className="lead-copy mb-12 max-w-3xl">
             {subtitle}
           </p>
         </Reveal>
@@ -34,7 +34,7 @@ const ProcessSteps = ({
       <div className="space-y-4">
         {steps.map((step, idx) => {
           const isExpanded = expandedIndex === idx;
-          
+
           return (
             <Reveal key={idx} delayMs={idx * 80}>
               <div className="section-dark rounded-xl border border-primary-olive/20 hover:border-primary-olive/50 transition-all duration-500 overflow-hidden hover:shadow-xl hover:shadow-primary-olive/10">
@@ -64,7 +64,7 @@ const ProcessSteps = ({
                             {step.title}
                           </h3>
                         </div>
-                        <p className="text-base font-inter text-primary-muted leading-relaxed">
+                        <p className="body-copy">
                           {step.desc}
                         </p>
                         {step.details && (
@@ -99,8 +99,8 @@ const ProcessSteps = ({
   }
 
   return (
-    <section className={`py-16 md:py-24 px-4 sm:px-6 lg:px-8 section-base`}>
-      <div className={variant === 'compact' ? 'max-w-4xl mx-auto' : 'max-w-6xl mx-auto'}>
+    <section className={`py-16 md:py-24 site-container section-base`}>
+      <div className={variant === 'compact' ? 'w-full' : 'w-full'}>
         {content}
       </div>
     </section>

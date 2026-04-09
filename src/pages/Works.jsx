@@ -42,13 +42,13 @@ const Works = () => {
   return (
     <div className="min-h-screen section-base">
       {/* Selected Works */}
-      <section className="pt-20 md:pt-24 pb-16 md:pb-24 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-6xl mx-auto">
+      <section className="pt-20 md:pt-24 pb-16 md:pb-24 site-container">
+        <div className="w-full">
           <Reveal direction="up" durationMs={900}>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-libre-caslon text-primary-white text-center mb-6">
+            <h1 className="section-title md:text-6xl font-libre-caslon text-center mb-6">
               Selected <span className="italic">Works</span>
             </h1>
-            <p className="text-lg font-inter text-primary-muted text-center max-w-3xl mx-auto leading-relaxed">
+            <p className="lead-copy text-center w-full">
               High-fidelity photography for those who value detail. From unveiling innovations to the timelessness of a product, every frame is a visual adventure.
             </p>
           </Reveal>
@@ -95,13 +95,13 @@ const Works = () => {
       )}
 
       {/* FAQs */}
-      <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 section-dark">
-        <div className="max-w-6xl mx-auto">
+      <section className="py-16 md:py-24 site-container section-dark">
+        <div className="w-full">
           <Reveal direction="left" durationMs={900}>
-            <h2 className="text-4xl md:text-5xl font-libre-caslon italic text-primary-white mb-3">
+            <h2 className="section-title italic mb-3">
               FAQs
             </h2>
-            <p className="text-base font-inter text-primary-muted mb-10 leading-relaxed max-w-xl">
+            <p className="body-copy mb-10 max-w-xl">
               Curious about our process or pricing? Here are some helpful answers to your FAQs, designed to simplify the answers.
             </p>
           </Reveal>
@@ -123,13 +123,13 @@ const Works = () => {
       </section>
 
       {/* Visual Notes */}
-      <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 section-base">
-        <div className="max-w-6xl mx-auto">
+      <section className="py-16 md:py-24 site-container section-base">
+        <div className="w-full">
           <Reveal direction="right" durationMs={900}>
-            <h2 className="text-4xl md:text-5xl font-libre-caslon italic text-primary-white mb-4">
+            <h2 className="section-title italic mb-4">
               Visual <span className="not-italic">Notes</span>
             </h2>
-            <p className="text-lg font-inter text-primary-muted mb-12 leading-relaxed">
+            <p className="lead-copy mb-12">
               Ongoing works, experiments, and moments shared in real-time on Instagram.
             </p>
           </Reveal>
@@ -167,27 +167,23 @@ const Works = () => {
         sectionBg="section-base"
       />
       <section className="py-12 md:py-16 px-0 overflow-hidden section-dark">
-        <Marquee speed={40} className="py-4">
-          <span className="inline-flex items-center gap-6 mx-6">
-            <span className="text-primary-white/90 font-libre-caslon text-xl md:text-2xl italic hover:text-shimmer transition-all duration-300">Where your ideas</span>
-            {bottomImages.slice(0, 4).map((img, idx) => (
-              <img
-                key={idx}
-                src={img}
-                alt=""
-                className="w-10 h-10 md:w-12 md:h-12 rounded-lg object-cover flex-shrink-0 hover:scale-125 hover:rotate-12 transition-all duration-300 cursor-pointer"
-              />
-            ))}
-            <span className="text-primary-white/90 font-libre-caslon text-xl md:text-2xl italic hover:text-shimmer transition-all duration-300">meet in</span>
-            {bottomImages.map((img, idx) => (
-              <img
-                key={`b-${idx}`}
-                src={img}
-                alt=""
-                className="w-10 h-10 md:w-12 md:h-12 rounded-lg object-cover flex-shrink-0 hover:scale-125 hover:rotate-12 transition-all duration-300 cursor-pointer"
-              />
-            ))}
-            <span className="text-primary-white/90 font-libre-caslon text-xl md:text-2xl italic hover:text-shimmer transition-all duration-300">storytelling</span>
+        <Marquee speed={40} className="py-6">
+          <span className="inline-flex items-center gap-10 mx-10">
+            <span className="text-primary-white/90 font-inter font-bold text-3xl md:text-5xl transition-all duration-300">Where your <span className="font-libre-caslon italic">ideas</span></span>
+            <span className="inline-flex items-center">
+              {bottomImages.slice(0, 3).map((img, idx) => (
+                <img key={idx} src={img} alt="" className="w-10 h-10 md:w-12 md:h-12 rounded-lg object-cover flex-shrink-0 border-2 border-white shadow-lg transition-all duration-300 cursor-pointer hover:scale-110"
+                  style={{ marginLeft: idx > 0 ? '-16px' : '0', transform: `rotate(${[-6, 0, 6][idx]}deg)`, zIndex: idx === 1 ? 2 : 1 }} />
+              ))}
+            </span>
+            <span className="text-primary-white/90 font-inter font-bold text-3xl md:text-5xl transition-all duration-300">meet in</span>
+            <span className="inline-flex items-center">
+              {bottomImages.slice(1, 4).map((img, idx) => (
+                <img key={idx} src={img} alt="" className="w-10 h-10 md:w-12 md:h-12 rounded-lg object-cover flex-shrink-0 border-2 border-white shadow-lg transition-all duration-300 cursor-pointer hover:scale-110"
+                  style={{ marginLeft: idx > 0 ? '-16px' : '0', transform: `rotate(${[-6, 0, 6][idx]}deg)`, zIndex: idx === 1 ? 2 : 1 }} />
+              ))}
+            </span>
+            <span className="text-primary-white/90 font-inter font-bold text-3xl md:text-5xl transition-all duration-300">storytelling</span>
           </span>
         </Marquee>
       </section>

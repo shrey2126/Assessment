@@ -20,6 +20,32 @@
   }
 }
 
+@layer components {
+  .site-container {
+    @apply w-full px-4 sm:px-6 lg:px-10;
+  }
+
+  .display-title {
+    @apply text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-tight text-primary-white;
+  }
+
+  .section-title {
+    @apply text-3xl sm:text-4xl md:text-5xl leading-tight text-primary-white;
+  }
+
+  .card-title {
+    @apply text-xl md:text-2xl font-semibold text-primary-white;
+  }
+
+  .lead-copy {
+    @apply text-base md:text-lg font-inter text-primary-muted leading-relaxed;
+  }
+
+  .body-copy {
+    @apply text-sm md:text-base font-inter text-primary-muted leading-relaxed;
+  }
+}
+
 @layer utilities {
   .animate-fade-in {
     animation: fadeIn 1s ease-in;

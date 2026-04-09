@@ -108,9 +108,9 @@ const Home = () => {
         </section>
 
         {/* Main Headline with overlapping images */}
-        <section className="py-12 md:py-16 px-4 sm:px-6 lg:px-8">
-          <div className={`max-w-5xl mx-auto text-center transition-all duration-1000 ${heroEntered ? 'animate-hero-entrance opacity-100' : 'opacity-0'}`}>
-            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-libre-caslon text-primary-white leading-tight">
+        <section className="py-12 md:py-16 site-container">
+          <div className={`w-full text-center transition-all duration-1000 ${heroEntered ? 'animate-hero-entrance opacity-100' : 'opacity-0'}`}>
+            <h1 className="display-title font-libre-caslon">
               I capture{' '}
               <span className="inline-flex items-center gap-0 mx-1 animate-bounce-in relative" style={{ animationDelay: '0.3s' }}>
                 {heroInlineImages.map((img, idx) => (
@@ -122,13 +122,12 @@ const Home = () => {
                   />
                 ))}
               </span>{' '}
-              <span className="italic text-shimmer">moments</span> with intent,
+              <span className="italic">moments</span> with intent,
               <br className="hidden sm:block" />
               blending <span className="italic hover:text-primary-olive transition-colors duration-300 cursor-pointer">vision</span> and craft to tell visual
               <br className="hidden sm:block" />
               <span className="italic inline-block relative group cursor-pointer">
                 stories
-                <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary-olive/80 rounded-full transition-all duration-300 group-hover:h-1 group-hover:bg-primary-olive" style={{ transform: 'scaleX(1.02)' }} />
               </span>
             </h1>
           </div>
@@ -144,10 +143,10 @@ const Home = () => {
         </section>
 
         {/* Featured Works — heading from left, image from left, text from right */}
-        <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 section-dark/95">
-          <div className="max-w-6xl mx-auto">
+        <section className="py-16 md:py-24 site-container section-dark/95">
+          <div className="w-full">
             <Reveal direction="left" durationMs={900}>
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-inter text-primary-white mb-12">
+              <h2 className="section-title md:text-6xl font-inter mb-10">
                 Featured <span className="font-libre-caslon italic">Works</span> For Our<br /> Incredible <span className="font-libre-caslon italic">Clients</span>
               </h2>
             </Reveal>
@@ -164,8 +163,8 @@ const Home = () => {
               </Reveal>
               <Reveal direction="right" distance={70} delayMs={100} durationMs={1000}>
                 <div className="space-y-6">
-                  <h3 className="text-4xl md:text-5xl font-libre-caslon text-primary-white">F&B</h3>
-                  <p className="text-lg font-inter text-primary-muted leading-relaxed">
+                  <h3 className="card-title font-libre-caslon">F&B</h3>
+                  <p className="body-copy">
                     Lorem ipsum dolor sit amet consectetur. Consequat enim pulvinar aliquam adipiscing vel cursus habitasse odio ridiculus.
                   </p>
                   <Link to="/works">
@@ -180,15 +179,15 @@ const Home = () => {
         </section>
 
         {/* About Me — text from left, image from right */}
-        <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 section-base">
-          <div className="max-w-6xl mx-auto">
+        <section className="py-16 md:py-24 site-container section-base">
+          <div className="w-full">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <Reveal direction="left" distance={60} durationMs={950}>
                 <div>
-                  <h2 className="text-4xl md:text-5xl lg:text-6xl font-libre-caslon text-primary-white mb-6">
+                  <h2 className="section-title md:text-6xl font-libre-caslon mb-6">
                     About <span className="italic">Me</span>
                   </h2>
-                  <p className="text-lg font-inter text-primary-muted leading-relaxed mb-8">
+                  <p className="body-copy mb-8">
                     I am a visual storyteller working across photography, film, and motion. I collaborate with brands, agencies, and individuals to create imagery that feels intentional, polished, and authentic.
                   </p>
                   <Link to="/about">
@@ -213,13 +212,13 @@ const Home = () => {
         </section>
 
         {/* Process — heading from right, steps stagger up */}
-        <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 section-dark">
-          <div className="max-w-4xl mx-auto">
+        <section className="py-16 md:py-24 site-container section-dark">
+          <div className="w-full">
             <Reveal direction="right" durationMs={900}>
-              <h2 className="text-4xl md:text-5xl font-libre-caslon italic text-primary-white mb-4">
+              <h2 className="section-title md:text-6xl font-libre-caslon italic mb-4">
                 Process
               </h2>
-              <p className="text-lg font-inter text-primary-muted mb-12 leading-relaxed">
+              <p className="body-copy mb-10">
                 We think successful outcomes stem from clear communication and a unified vision, ensuring alignment from our initial discussion to the final delivery.
               </p>
             </Reveal>
@@ -228,13 +227,13 @@ const Home = () => {
         </section>
 
         {/* FAQs — heading from left, image from left, accordion from right */}
-        <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 section-base">
-          <div className="max-w-6xl mx-auto">
+        <section className="py-16 md:py-24 site-container section-base">
+          <div className="w-full">
             <Reveal direction="left" durationMs={900}>
-              <h2 className="text-4xl md:text-5xl font-libre-caslon italic text-primary-white mb-3">
+              <h2 className="section-title md:text-6xl font-libre-caslon italic mb-3">
                 FAQs
               </h2>
-              <p className="text-base font-inter text-primary-muted mb-10 leading-relaxed max-w-xl">
+              <p className="lead-copy mb-10 max-w-xl">
                 Curious about collaborating? Here are some helpful answers to your FAQs,<br className="hidden sm:block" /> designed to simplify the process!
               </p>
             </Reveal>
@@ -268,13 +267,13 @@ const Home = () => {
         </section>
 
         {/* Visual Notes — heading from up, grid items stagger */}
-        <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 section-dark">
-          <div className="max-w-6xl mx-auto">
+        <section className="py-16 md:py-24 site-container section-dark">
+          <div className="w-full">
             <Reveal direction="up" durationMs={900}>
-              <h2 className="text-4xl md:text-5xl font-libre-caslon text-primary-white mb-4">
+              <h2 className="section-title md:text-6xl font-libre-caslon mb-4">
                 <span className="italic">Visual</span> <span className="not-italic">Notes</span>
               </h2>
-              <p className="text-lg font-inter text-primary-muted mb-12 leading-relaxed">
+              <p className="body-copy mb-10">
                 Ongoing stories, experiments, and moments shared in real time on Instagram.
               </p>
             </Reveal>
@@ -302,27 +301,41 @@ const Home = () => {
         </section>
 
         <section className="py-12 md:py-16 px-0 overflow-hidden section-dark">
-          <Marquee speed={40} className="py-4">
-            <span className="inline-flex items-center gap-6 mx-6">
-              <span className="text-primary-white/90 font-inter font-bold text-4xl md:text-5xl hover:text-shimmer transition-all duration-300">Where your <span className="font-libre-caslon italic">ideas</span></span>
-              {bottomImages.slice(0, 4).map((img, idx) => (
-                <img
-                  key={idx}
-                  src={img}
-                  alt=""
-                  className="w-10 h-10 md:w-12 md:h-12 rounded-lg object-cover flex-shrink-0 hover:scale-125 hover:rotate-12 transition-all duration-300 cursor-pointer"
-                />
-              ))}
-              <span className="text-primary-white/90 font-inter font-bold text-4xl md:text-5xl hover:text-shimmer transition-all duration-300">meet in</span>
-              {bottomImages.map((img, idx) => (
-                <img
-                  key={`b-${idx}`}
-                  src={img}
-                  alt=""
-                  className="w-10 h-10 md:w-12 md:h-12 rounded-lg object-cover flex-shrink-0 hover:scale-125 hover:rotate-12 transition-all duration-300 cursor-pointer"
-                />
-              ))}
-              <span className="text-primary-white/90 font-inter font-bold text-4xl md:text-5xl hover:text-shimmer transition-all duration-300">storytelling</span>
+          <Marquee speed={40} className="py-6">
+            <span className="inline-flex items-center gap-10 mx-10">
+              <span className="text-primary-white/90 font-inter font-bold text-4xl md:text-5xl transition-all duration-300">Where your <span className="font-libre-caslon italic">ideas</span></span>
+              <span className="inline-flex items-center">
+                {bottomImages.slice(0, 3).map((img, idx) => (
+                  <img
+                    key={idx}
+                    src={img}
+                    alt=""
+                    className="w-10 h-10 md:w-12 md:h-12 rounded-lg object-cover flex-shrink-0 border-2 border-white shadow-lg transition-all duration-300 cursor-pointer hover:scale-110"
+                    style={{
+                      marginLeft: idx > 0 ? '-16px' : '0',
+                      transform: `rotate(${[-6, 0, 6][idx]}deg)`,
+                      zIndex: idx === 1 ? 2 : 1,
+                    }}
+                  />
+                ))}
+              </span>
+              <span className="text-primary-white/90 font-inter font-bold text-4xl md:text-5xl transition-all duration-300">meet in</span>
+              <span className="inline-flex items-center">
+                {bottomImages.slice(1, 4).map((img, idx) => (
+                  <img
+                    key={idx}
+                    src={img}
+                    alt=""
+                    className="w-10 h-10 md:w-12 md:h-12 rounded-lg object-cover flex-shrink-0 border-2 border-white shadow-lg transition-all duration-300 cursor-pointer hover:scale-110"
+                    style={{
+                      marginLeft: idx > 0 ? '-16px' : '0',
+                      transform: `rotate(${[-6, 0, 6][idx]}deg)`,
+                      zIndex: idx === 1 ? 2 : 1,
+                    }}
+                  />
+                ))}
+              </span>
+              <span className="text-primary-white/90 font-inter font-bold text-4xl md:text-5xl transition-all duration-300">storytelling</span>
             </span>
           </Marquee>
         </section>

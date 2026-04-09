@@ -4,8 +4,6 @@ const IntroOverlay = ({ onComplete }) => {
   const [isVisible, setIsVisible] = useState(true);
   const [showScroll, setShowScroll] = useState(false);
   const [animationPhase, setAnimationPhase] = useState(0);
-  const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
-  const [trails, setTrails] = useState([]);
 
   useEffect(() => {
     // Animation phases
@@ -18,29 +16,6 @@ const IntroOverlay = ({ onComplete }) => {
       clearTimeout(phase2);
       clearTimeout(phase3);
     };
-  }, []);
-
-  useEffect(() => {
-    const handleMouseMove = (e) => {
-      setCursorPosition({ x: e.clientX, y: e.clientY });
-
-      // Add new trail
-      const newTrail = {
-        id: Date.now() + Math.random(),
-        x: e.clientX,
-        y: e.clientY,
-      };
-
-      setTrails(prev => [...prev, newTrail]);
-
-      // Remove trail after animation
-      setTimeout(() => {
-        setTrails(prev => prev.filter(trail => trail.id !== newTrail.id));
-      }, 800);
-    };
-
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
   }, []);
 
   const handleScroll = () => {
@@ -62,7 +37,6 @@ const IntroOverlay = ({ onComplete }) => {
         background: 'linear-gradient(135deg, #060d02 0%, #0d1a06 25%, #162608 50%, #1e3410 75%, #0a1404 100%)',
         backgroundSize: '400% 400%',
         animation: 'gradientShift 12s ease infinite',
-        cursor: 'none'
       }}
     >
       {/* Grid — top right corner, appears after content loads */}
@@ -114,57 +88,6 @@ const IntroOverlay = ({ onComplete }) => {
           Independent photographer specialized in<br />
           editorial portraits and visual narratives.
         </p>
-      </div>
-      {/* Cursor trails */}
-      {trails.map((trail) => (
-        <div
-          key={trail.id}
-          className="pointer-events-none fixed"
-          style={{
-            left: trail.x,
-            top: trail.y,
-            width: '20px',
-            height: '20px',
-            transform: 'translate(-50%, -50%)',
-            animation: 'trailFade 0.8s ease-out forwards',
-            zIndex: 9999
-          }}
-        >
-          <div
-            style={{
-              width: '100%',
-              height: '100%',
-              borderRadius: '50%',
-              background: 'radial-gradient(circle, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0) 70%)',
-              boxShadow: '0 0 20px rgba(255, 255, 255, 0.5), 0 0 40px rgba(255, 255, 255, 0.3)',
-            }}
-          />
-        </div>
-      ))}
-
-      {/* Custom cursor */}
-      <div
-        className="pointer-events-none fixed"
-        style={{
-          left: cursorPosition.x,
-          top: cursorPosition.y,
-          width: '30px',
-          height: '30px',
-          transform: 'translate(-50%, -50%)',
-          transition: 'width 0.2s, height 0.2s',
-          zIndex: 10000
-        }}
-      >
-        <div
-          style={{
-            width: '100%',
-            height: '100%',
-            borderRadius: '50%',
-            border: '2px solid rgba(255, 255, 255, 0.5)',
-            background: 'radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 70%)',
-            boxShadow: '0 0 15px rgba(255, 255, 255, 0.4)',
-          }}
-        />
       </div>
 
       <div className="text-center px-4 relative">
@@ -302,7 +225,6 @@ const IntroOverlay = ({ onComplete }) => {
             className="cursor-pointer hover:scale-110 transition-transform duration-300 group"
             style={{
               animation: 'fadeIn 1s ease forwards',
-              cursor: 'none'
             }}
             aria-label="Scroll to enter"
           >
@@ -351,17 +273,6 @@ const IntroOverlay = ({ onComplete }) => {
           0% { background-position: 0% 50%; }
           50% { background-position: 100% 50%; }
           100% { background-position: 0% 50%; }
-        }
-
-        @keyframes trailFade {
-          0% {
-            opacity: 1;
-            transform: translate(-50%, -50%) scale(1);
-          }
-          100% {
-            opacity: 0;
-            transform: translate(-50%, -50%) scale(2);
-          }
         }
       `}</style>
     </div>

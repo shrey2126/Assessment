@@ -1,42 +1,23 @@
-import { Link } from 'react-router-dom';
 import Icon from './Icon';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
-  const navLinks = [
-    { name: 'Home', path: '/' },
-    { name: 'About', path: '/about' },
-    { name: 'Works', path: '/works' },
-    { name: 'Contact', path: '/contact' },
-  ];
-
   return (
     <footer className="section-dark border-t border-white/10">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-14 md:py-20">
+      <div className="site-container py-14 md:py-20">
         <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-10">
           {/* Left: tagline */}
           <div className="max-w-xl">
-            <p className="text-2xl sm:text-3xl md:text-4xl font-libre-caslon text-primary-white leading-tight">
+            <p className="section-title font-libre-caslon">
               Refined <span className="italic">visual storytelling</span>
               <br />
               across photography, film, and motion.
             </p>
           </div>
 
-          {/* Right: nav links + contact + socials */}
+          {/* Right: contact + socials */}
           <div className="lg:text-right space-y-6">
-            <nav className="flex flex-wrap gap-x-6 gap-y-2">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.path}
-                  to={link.path}
-                  className="text-primary-white/80 hover:text-primary-olive font-inter text-sm md:text-base transition-colors"
-                >
-                  {link.name}
-                </Link>
-              ))}
-            </nav>
             <div className="space-y-3 text-sm md:text-base font-inter text-primary-muted">
               <a
                 href="mailto:chiragsatikuwar@gmail.com"

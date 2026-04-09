@@ -55,15 +55,15 @@ const Contact = () => {
   return (
     <div className="min-h-screen section-base">
       {/* Hero - scroll-linked fan-out image stack */}
-      <section ref={heroSectionRef} className="pt-20 md:pt-24 pb-12 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-6xl mx-auto">
+      <section ref={heroSectionRef} className="pt-6 md:pt-10 pb-10 md:pb-12 site-container">
+        <div className="w-full">
           <Reveal direction="left" durationMs={950}>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-libre-caslon text-primary-white mb-6 leading-tight">
-              Your <span className="italic text-shimmer">vision</span> deserves to be
+            <h1 className="display-title font-libre-caslon mb-6 leading-none">
+              Your <span className="italic">vision</span> deserves to be
               <br />
               captured <span className="italic hover:text-primary-olive transition-colors duration-300 cursor-pointer">perfectly</span>.
             </h1>
-            <p className="text-xl font-inter text-primary-muted max-w-2xl animate-fade-in-up-blur" style={{ animationDelay: '0.3s' }}>
+            <p className="lead-copy max-w-2xl animate-fade-in-up-blur" style={{ animationDelay: '0.3s' }}>
               Tell me your story, and let's bring it to life together.
             </p>
           </Reveal>
@@ -96,19 +96,19 @@ const Contact = () => {
         </div>
       </section>
 
-      <section className="py-12 md:py-16 px-4 sm:px-6 lg:px-8 section-dark">
-        <div className="max-w-4xl mx-auto text-center">
+      <section className="py-10 md:py-14 site-container section-dark">
+        <div className="w-full text-center">
           <Reveal direction="up" durationMs={950}>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-libre-caslon text-primary-white mb-6">
-              Let's <span className="italic text-shimmer">Create</span> Something <span className="italic hover:text-primary-olive transition-colors duration-300 cursor-pointer">Timeless</span>.
+            <h2 className="section-title md:text-6xl font-libre-caslon mb-6">
+              Let's <span className="italic">Create</span> Something <span className="italic hover:text-primary-olive transition-colors duration-300 cursor-pointer">Timeless</span>.
             </h2>
           </Reveal>
         </div>
       </section>
 
       {/* Contact Form */}
-      <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 section-base">
-        <div className="max-w-2xl mx-auto">
+      <section className="py-14 md:py-20 site-container section-base">
+        <div className="max-w-[720px] mx-auto">
           <div className="section-dark rounded-2xl border border-white/10 p-6 md:p-8 hover:border-primary-olive/30 transition-all duration-500 hover:shadow-xl hover:shadow-primary-olive/10">
             <form onSubmit={handleSubmit} className="space-y-6">
               <Reveal direction="left">
@@ -166,9 +166,11 @@ const Contact = () => {
               </Reveal>
 
               <Reveal direction="up" delayMs={240}>
-                <Button type="submit" variant="primary" className="w-full sm:w-auto uppercase tracking-wider hover:scale-105">
-                  Send Message
-                </Button>
+                <div className="pt-2 flex justify-center">
+                  <Button type="submit" variant="primary" className="uppercase tracking-wider hover:scale-105">
+                    Send Message
+                  </Button>
+                </div>
               </Reveal>
             </form>
           </div>
@@ -177,27 +179,23 @@ const Contact = () => {
 
       {/* Where your ideas meet - infinite marquee */}
       <section className="py-12 md:py-16 px-0 overflow-hidden section-dark">
-        <Marquee speed={40} className="py-4">
-          <span className="inline-flex items-center gap-6 mx-6">
-            <span className="text-primary-white/90 font-libre-caslon text-xl md:text-2xl italic hover:text-shimmer transition-all duration-300">Where your ideas</span>
-            {bottomImages.slice(0, 4).map((img, idx) => (
-              <img
-                key={idx}
-                src={img}
-                alt=""
-                className="w-10 h-10 md:w-12 md:h-12 rounded-lg object-cover flex-shrink-0 hover:scale-125 hover:rotate-12 transition-all duration-300 cursor-pointer"
-              />
-            ))}
-            <span className="text-primary-white/90 font-libre-caslon text-xl md:text-2xl italic hover:text-shimmer transition-all duration-300">meet in</span>
-            {bottomImages.map((img, idx) => (
-              <img
-                key={`b-${idx}`}
-                src={img}
-                alt=""
-                className="w-10 h-10 md:w-12 md:h-12 rounded-lg object-cover flex-shrink-0 hover:scale-125 hover:rotate-12 transition-all duration-300 cursor-pointer"
-              />
-            ))}
-            <span className="text-primary-white/90 font-libre-caslon text-xl md:text-2xl italic hover:text-shimmer transition-all duration-300">storytelling</span>
+        <Marquee speed={40} className="py-6">
+          <span className="inline-flex items-center gap-10 mx-10">
+            <span className="text-primary-white/90 font-inter font-bold text-3xl md:text-5xl transition-all duration-300">Where your <span className="font-libre-caslon italic">ideas</span></span>
+            <span className="inline-flex items-center">
+              {bottomImages.slice(0, 3).map((img, idx) => (
+                <img key={idx} src={img} alt="" className="w-10 h-10 md:w-12 md:h-12 rounded-lg object-cover flex-shrink-0 border-2 border-white shadow-lg transition-all duration-300 cursor-pointer hover:scale-110"
+                  style={{ marginLeft: idx > 0 ? '-16px' : '0', transform: `rotate(${[-6, 0, 6][idx]}deg)`, zIndex: idx === 1 ? 2 : 1 }} />
+              ))}
+            </span>
+            <span className="text-primary-white/90 font-inter font-bold text-3xl md:text-5xl transition-all duration-300">meet in</span>
+            <span className="inline-flex items-center">
+              {bottomImages.slice(1, 4).map((img, idx) => (
+                <img key={idx} src={img} alt="" className="w-10 h-10 md:w-12 md:h-12 rounded-lg object-cover flex-shrink-0 border-2 border-white shadow-lg transition-all duration-300 cursor-pointer hover:scale-110"
+                  style={{ marginLeft: idx > 0 ? '-16px' : '0', transform: `rotate(${[-6, 0, 6][idx]}deg)`, zIndex: idx === 1 ? 2 : 1 }} />
+              ))}
+            </span>
+            <span className="text-primary-white/90 font-inter font-bold text-3xl md:text-5xl transition-all duration-300">storytelling</span>
           </span>
         </Marquee>
       </section>

@@ -25,14 +25,14 @@ const FAQAccordion = ({
           <div
             className="overflow-hidden transition-all duration-300"
             style={{
-              background: 'rgba(20, 32, 12, 0.85)',
+              background: 'rgba(40, 60, 25, 0.85)',
               borderRadius: '14px',
             }}
           >
             <button
               type="button"
               onClick={() => setOpenIdx(openIdx === idx ? null : idx)}
-              className="w-full px-5 py-4 flex justify-between items-center text-left font-inter text-sm text-primary-white hover:text-primary-olive transition-colors"
+              className="w-full px-5 py-4 flex justify-between items-center text-left font-inter text-sm md:text-base text-primary-white transition-colors"
             >
               <span>{question}</span>
               <span className={`w-5 h-5 flex-shrink-0 text-lg leading-none transition-transform duration-300 text-gray-400 ${openIdx === idx ? 'rotate-45' : ''}`}>
@@ -44,7 +44,7 @@ const FAQAccordion = ({
                 }`}
             >
               <div className="overflow-hidden">
-                <div className="px-5 pb-4 text-primary-muted text-sm font-inter">
+                <div className="px-5 pb-4 text-primary-muted text-sm md:text-base font-inter">
                   Professional answer tailored to your specific needs and project requirements. We ensure clear communication and deliver high-quality results.
                 </div>
               </div>
@@ -58,8 +58,8 @@ const FAQAccordion = ({
   if (itemsOnly) return accordionList;
 
   return (
-    <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 section-dark">
-      <div className="max-w-6xl mx-auto">
+    <section className="py-16 md:py-24 site-container section-dark">
+      <div className="w-full">
         <div className={`grid grid-cols-1 ${layout === 'split' ? 'lg:grid-cols-2' : ''} gap-12 items-start`}>
           {/* Image - left or top */}
           <Reveal className={layout === 'stack' ? 'order-2' : ''}>
@@ -75,10 +75,10 @@ const FAQAccordion = ({
           {/* FAQs */}
           <div className={layout === 'stack' ? 'order-1' : ''}>
             <Reveal>
-              <h2 className="text-4xl md:text-5xl font-libre-caslon italic text-primary-white mb-4">
+              <h2 className="section-title italic mb-4">
                 {title}
               </h2>
-              <p className="text-lg font-inter text-primary-muted mb-8 leading-relaxed">
+              <p className="lead-copy mb-8">
                 {subtitle}
               </p>
             </Reveal>

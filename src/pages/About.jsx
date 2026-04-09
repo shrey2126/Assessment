@@ -60,11 +60,11 @@ const About = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-transparent">
+    <div className="min-h-screen section-base">
 
       {/* ── HERO: text slides from left, portrait slides from right ── */}
-      <section className="pt-24 pb-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-6xl mx-auto">
+      <section className="pt-24 pb-16 site-container">
+        <div className="w-full">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
             {/* Left — text, slides in from left on mount */}
@@ -75,14 +75,14 @@ const About = () => {
                 transform: heroIn ? 'translateX(0)' : 'translateX(-60px)',
               }}
             >
-              <h1 className="text-4xl sm:text-5xl md:text-6xl font-libre-caslon text-primary-white mb-6 leading-tight">
+              <h1 className="display-title font-libre-caslon mb-6">
                 Behind the{' '}
                 <span className="inline-flex items-center mx-1">
                   <span className="w-9 h-9 bg-primary-olive rounded-full inline-block animate-morph" />
                 </span>{' '}
                 <span className="italic text-shimmer">Lens</span>
               </h1>
-              <p className="text-base md:text-lg font-inter text-primary-muted leading-relaxed">
+              <p className="lead-copy">
                 I'm a photographer focused on capturing real moments — the kind that feel honest, unforced, and true to the people in them.
               </p>
             </div>
@@ -96,11 +96,11 @@ const About = () => {
                 transitionDelay: '150ms',
               }}
             >
-              <div className="rounded-2xl overflow-hidden shadow-2xl group">
+              <div className="rounded-2xl overflow-hidden shadow-2xl">
                 <img
                   src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=900&fit=crop"
                   alt="Portrait"
-                  className="w-full h-[420px] md:h-[520px] object-cover transition-transform duration-700 group-hover:scale-105"
+                  className="w-full h-[420px] md:h-[520px] object-cover"
                 />
               </div>
             </div>
@@ -108,47 +108,35 @@ const About = () => {
         </div>
       </section>
 
-      {/* ── JOURNEY: title fades up, text fades up, wide photo fades up ── */}
-      <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 section-dark">
-        <div className="max-w-6xl mx-auto">
+      {/* ── JOURNEY: centered title + centered body text ── */}
+      <section className="py-20 md:py-32 site-container section-dark">
+        <div className="w-full max-w-4xl mx-auto text-center">
 
-          {/* Title — fades up from bottom */}
           <Reveal>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-libre-caslon text-primary-white mb-8">
-              A <span className="italic text-shimmer">Journey</span> Into Photography
+            <h2 className="section-title md:text-6xl font-libre-caslon mb-10">
+              A <span className="italic">Journey</span> Into Photography
             </h2>
           </Reveal>
 
-          {/* Body text — fades up slightly after */}
           <Reveal delayMs={100}>
-            <p className="text-base md:text-lg font-inter text-primary-muted leading-relaxed max-w-3xl mb-12">
+            <p className="lead-copy">
               When he's not behind the camera or refining images in post-production, Chirag finds inspiration in quieter moments — practicing origami, the Japanese art of paper folding, or taking long walks through the city, observing the details that often go unnoticed.
             </p>
           </Reveal>
 
-          {/* Wide landscape photo — fades up */}
-          <Reveal delayMs={180}>
-            <div className="rounded-2xl overflow-hidden shadow-2xl group">
-              <img
-                src="https://images.unsplash.com/photo-1452587925148-ce544e77e70d?w=1400&h=600&fit=crop"
-                alt="Photographer at work"
-                className="w-full h-[320px] md:h-[440px] object-cover transition-transform duration-700 group-hover:scale-105"
-              />
-            </div>
-          </Reveal>
         </div>
       </section>
 
       {/* ── PROCESS: title slides from left, steps fade up staggered ── */}
-      <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 section-base">
-        <div className="max-w-6xl mx-auto">
+      <section className="py-16 md:py-24 site-container section-base">
+        <div className="w-full">
           <Reveal direction="left">
-            <h2 className="text-4xl md:text-5xl font-libre-caslon italic text-primary-white mb-3">
+            <h2 className="section-title italic mb-3">
               Process
             </h2>
           </Reveal>
           <Reveal delayMs={80}>
-            <p className="text-base font-inter text-primary-muted mb-10 leading-relaxed max-w-2xl">
+            <p className="body-copy mb-10 max-w-2xl">
               We think successful outcomes stem from clear communication and a unified vision, ensuring alignment from our initial discussion to the final delivery.
             </p>
           </Reveal>
@@ -157,8 +145,8 @@ const About = () => {
       </section>
 
       {/* ── STATS: headline fades up, counters stagger in ── */}
-      <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 section-dark">
-        <div className="max-w-6xl mx-auto">
+      <section className="py-16 md:py-24 site-container section-dark">
+        <div className="w-full">
           <Reveal>
             <h2 className="text-3xl md:text-4xl font-inter font-bold text-primary-white mb-14 leading-tight">
               {/* Mobile: each phrase on its own line */}

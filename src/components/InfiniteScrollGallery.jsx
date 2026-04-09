@@ -64,7 +64,7 @@ const InfiniteScrollGallery = () => {
                 
                 {/* Center Text with shimmer effect */}
                 <div className="flex-shrink-0 px-8 md:px-16">
-                  <h2 className="text-3xl md:text-5xl lg:text-6xl font-libre-caslon text-white whitespace-nowrap hover:text-shimmer transition-all duration-300">
+                  <h2 className="text-3xl md:text-5xl lg:text-6xl font-libre-caslon text-white whitespace-nowrap transition-all duration-300">
                     Curated <span className="italic">Atmospheres</span>
                   </h2>
                 </div>

@@ -46,7 +46,7 @@ const ThreeRowScrollGallery = ({ images = [] }) => {
               {/* Center Text */}
               <div className="flex-shrink-0 px-8 md:px-16">
                 <h2 className="text-xl sm:text-3xl md:text-5xl lg:text-6xl font-libre-caslon text-white whitespace-nowrap">
-                  Curated <span className="italic text-shimmer">Atmospheres</span>
+                  Curated <span className="italic">Atmospheres</span>
                 </h2>
               </div>
 
